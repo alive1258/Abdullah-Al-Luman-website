@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
         className={`absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-500/50 to-transparent transition-opacity duration-500`}
       ></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container">
         <div className="flex justify-between items-center">
           {/* Logo with hover effect - Updated for Abdullah Al Luman */}
           <Link href="/" className="group relative" onClick={closeMenu}>

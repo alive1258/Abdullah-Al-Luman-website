@@ -1,21 +1,67 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary-base: #2c2c2c;
+  --color-primary-muted: #1a2a6c;
+  --color-secondary-base: #737373;
+  --color-info-base: #111217;
+  --color-blue-base: #0064f7;
+  --color-info-muted: #525252;
+  --color-warning-base: #e4a11b;
+  --color-danger-base: #fb545494;
+  --color-success-base: #157f40;
+  --color-neutral-base: #444444;
+  --color-neutral-muted: #19191f;
+  --color-black-base: #181a20;
+  --color-black-solid: #000000;
+  --color-black-muted: #151819;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  .container {
+    @apply max-w-360 w-full mx-auto px-5 md:px-20;
+  }
+  .paginateItem {
+    @apply px-4 py-2 bg-[#212327] border border-[#4B4C51] rounded-lg w-9 h-10 flex items-center justify-center text-white cursor-pointer;
+  }
+  .btn {
+    @apply px-6 py-3  bg-[#1A2A6C] text-center  rounded-[40px]  text-white cursor-pointer;
+  }
+  .outline-btn {
+    @apply text-primary-base  border duration-300 border-[#1A2A6C] hover:text-white hover:bg-[#1A2A6C] focus:ring-0 focus:outline-none  font-medium rounded-3xl text-[16px] px-5 py-2 text-center;
+  }
+  .input_style {
+    @apply w-full focus:bg-none border border-[#26272F] focus:border focus:border-[#26272F] bg-[#19191F] placeholder:text-[#787F90] rounded-lg focus:outline-none px-4 py-[9px] text-[15px] text-[#b5b7c8]  placeholder:text-sm;
+  }
+  .table_header {
+    @apply text-lg rounded-t-lg text-[#b5b7c8] font-semibold border border-[#26272F] bg-info-base py-3 px-4;
+  }
+  .table_section {
+    @apply min-w-full bg-black-base text-[#787f90]  rounded-b-lg;
+  }
+  .table_row {
+    @apply bg-black-base  text-start text-[13px] border  border-[#26272F];
+  }
+  .table_th {
+    @apply py-4 px-4 text-start border  border-[#26272F];
+  }
+  .tbody_tr {
+    @apply bg-info-base hover:bg-[#14151a]  z-500 border-[#26272F] rounded-b-lg border text-[#b5b7c8] text-[13px] px-2.5;
+  }
+  .add_form_section {
+    @apply border bg-info-base border-[#26272F] rounded-lg p-4;
+  }
+  .add_section_title {
+    @apply border-b text-lg text-[#b5b7c8] pb-5 border-[#26272F];
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* footer social icon  */
+  .footer-social-icon {
+    @apply flex items-center justify-center w-14 h-14 aspect-square rounded-full border border-white/10 bg-linear-to-b from-[#2B3957] to-transparent hover:bg-[#66FFCC] hover:border-[#66FFCC] transition-all duration-300 cursor-pointer;
+  }
+  /* footer social icon  */
+  .footer-social-icon-name {
+    @apply -top-9 left-1/2 -translate-x-1/2 text-sm text-white bg-linear-to-b from-[#2B3957] to-transparent px-2 py-1.5 rounded opacity-0 group-hover:opacity-100 transition;
   }
 }
 

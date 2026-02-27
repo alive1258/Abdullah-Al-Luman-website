@@ -1,19 +1,20 @@
-import AboutMe from "@/src/components/UI/AboutMe/AboutMe";
-import Contact from "@/src/components/UI/Contact/Contact";
 import HeroSection from "@/src/components/UI/HeroSection/HeroSection";
-import MyBlog from "@/src/components/UI/MyBlog/MyBlog";
-import MyProject from "@/src/components/UI/MyProject/MyProject";
-import MySkills from "@/src/components/UI/MySkills/MySkills";
+import AboutPreview from "@/src/components/UI/HomePage/AboutPreview/AboutPreview";
+import CareerHighlights from "@/src/components/UI/HomePage/CareerHighlights/CareerHighlights";
+import EducationPreview from "@/src/components/UI/HomePage/EducationPreview/EducationPreview";
+import RecentBlogPosts from "@/src/components/UI/HomePage/RecentBlogPosts/RecentBlogPosts";
+import WhyWorkWithMe from "@/src/components/UI/WhyWorkWithMe/WhyWorkWithMe";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <MySkills />
-      <AboutMe />
-      <MyProject />
-      <MyBlog />
-      <Contact />
+      <AboutPreview />
+      <CareerHighlights />
+      <EducationPreview />
+      {/* <StatisticsShowcase /> */}
+      <WhyWorkWithMe />
+      <RecentBlogPosts />
     </>
   );
 }
