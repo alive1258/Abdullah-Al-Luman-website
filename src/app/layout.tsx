@@ -14,33 +14,37 @@ const geistMono = Geist_Mono({
 
 // SEO Metadata
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sabbirhossain.dev"), // Replace with your actual domain
+  metadataBase: new URL("https://abdullahalluman.com"), // Replace with your actual domain
   title: {
-    default: "Sabbir Hossain - Electronics Engineering Student & Programmer",
-    template: "%s | Sabbir Hossain",
+    default:
+      "Abdullah Al Luman - Executive Engineer at BWDB | Water Resource Specialist",
+    template: "%s | Abdullah Al Luman",
   },
   description:
-    "Electronics Engineering student at Tangail Polytechnic Institute, passionate about embedded systems, IoT, PCB design, and programming. Explore projects in Arduino, ESP32, and robotics.",
+    "Executive Engineer at Bangladesh Water Development Board (BWDB), Bheramara Division, Kushtia. Specializing in water resource management, infrastructure development, and civil engineering projects in Bangladesh. BUET alumni and former Physics teacher at Udvash.",
   keywords: [
-    "Sabbir Hossain",
-    "Sourav",
-    "Electronics Engineering",
-    "Embedded Systems",
-    "IoT Developer",
-    "PCB Design",
-    "Arduino",
-    "ESP32",
-    "Robotics",
-    "C/C++ Programmer",
-    "Python Developer",
-    "Tangail Polytechnic Institute",
+    "Abdullah Al Luman",
+    "BWDB",
+    "Bangladesh Water Development Board",
+    "Executive Engineer",
+    "Water Resource Management",
+    "Civil Engineer",
+    "Infrastructure Development",
+    "BUET Alumni",
+    "Bheramara Division",
+    "Kushtia",
     "Bangladesh",
-    "Hardware Engineer",
-    "Embedded C",
+    "Sub-Divisional Engineer",
+    "Water Infrastructure",
+    "Flood Control",
+    "Irrigation Projects",
+    "Delta Management",
+    "Udvash Physics Teacher",
+    "Civil Engineering Bangladesh",
   ],
-  authors: [{ name: "Sabbir Hossain Sourav" }],
-  creator: "Sabbir Hossain Sourav",
-  publisher: "Sabbir Hossain Sourav",
+  authors: [{ name: "Abdullah Al Luman" }],
+  creator: "Abdullah Al Luman",
+  publisher: "Abdullah Al Luman",
   formatDetection: {
     email: false,
     address: false,
@@ -49,17 +53,18 @@ export const metadata: Metadata = {
 
   // Open Graph for social media
   openGraph: {
-    title: "Sabbir Hossain - Programmer & Electronics Engineering Student  ",
+    title:
+      "Abdullah Al Luman - Executive Engineer at BWDB | Water Resource Management",
     description:
-      "Electronics Engineering student specializing in embedded systems, IoT, and PCB design. Building innovative hardware and software solutions.",
-    url: "https://sabbirhossain.dev",
-    siteName: "Sabbir Hossain Portfolio",
+      "Executive Engineer at Bangladesh Water Development Board (BWDB), Bheramara Division, Kushtia. Specializing in water resource management, infrastructure development, and civil engineering projects in Bangladesh.",
+    url: "https://abdullahalluman.com",
+    siteName: "Abdullah Al Luman - Executive Engineer at BWDB",
     images: [
       {
         url: "/og-image.jpg", // Add your Open Graph image
         width: 1200,
         height: 630,
-        alt: "Sabbir Hossain - Electronics Engineer",
+        alt: "Abdullah Al Luman - Executive Engineer at BWDB",
       },
     ],
     locale: "en_US",
@@ -69,10 +74,10 @@ export const metadata: Metadata = {
   // Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "Sabbir Hossain - Electronics Engineering Student & Programmer",
+    title: "Abdullah Al Luman - Executive Engineer at BWDB",
     description:
-      "Electronics Engineering student specializing in embedded systems, IoT, and PCB design.",
-    creator: "@sabbirhossain", // Add your Twitter handle
+      "Executive Engineer at Bangladesh Water Development Board (BWDB). Specializing in water resource management and infrastructure development.",
+    creator: "@abdullahalluman", // Add your Twitter handle
     images: ["/twitter-image.jpg"], // Add your Twitter image
   },
 
@@ -116,15 +121,15 @@ export const metadata: Metadata = {
 
   // Alternate links
   alternates: {
-    canonical: "https://sabbirhossain.dev",
+    canonical: "https://abdullahalluman.com",
     languages: {
-      "en-US": "https://sabbirhossain.dev/en-US",
-      "bn-BD": "https://sabbirhossain.dev/bn-BD",
+      "en-US": "https://abdullahalluman.com/en-US",
+      "bn-BD": "https://abdullahalluman.com/bn-BD",
     },
   },
 
   // Category
-  category: "technology",
+  category: "engineering",
 };
 
 export default function RootLayout({
@@ -174,44 +179,99 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Sabbir Hossain Sourav",
-              alternateName: "Sourav",
-              url: "https://sabbirhossain.dev",
+              name: "Abdullah Al Luman",
+              alternateName: "A.L. Luman",
+              url: "https://abdullahalluman.com",
               sameAs: [
-                "https://github.com/sabbirhossain",
-                "https://linkedin.com/in/sabbirhossain",
-                "https://facebook.com/sabbirhossain",
-                "https://twitter.com/sabbirhossain",
+                "https://linkedin.com/in/abdullahalluman",
+                "https://twitter.com/abdullahalluman",
+                "https://facebook.com/abdullahalluman",
+                "https://github.com/abdullahalluman",
               ],
-              jobTitle: "Electronics Engineering Student",
+              jobTitle: "Executive Engineer",
               worksFor: {
-                "@type": "CollegeOrUniversity",
-                name: "Tangail Polytechnic Institute",
+                "@type": "GovernmentOrganization",
+                name: "Bangladesh Water Development Board (BWDB)",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Bheramara",
+                  addressRegion: "Kushtia",
+                  addressCountry: "Bangladesh",
+                },
               },
+              alumniOf: [
+                {
+                  "@type": "CollegeOrUniversity",
+                  name: "Bangladesh University of Engineering and Technology (BUET)",
+                  sameAs: "https://www.buet.ac.bd/",
+                },
+              ],
               knowsAbout: [
-                "Embedded Systems",
-                "IoT",
-                "PCB Design",
-                "Arduino",
-                "ESP32",
-                "C/C++",
-                "Python",
-                "Robotics",
+                "Water Resource Management",
+                "Civil Engineering",
+                "Infrastructure Development",
+                "Flood Control Systems",
+                "Irrigation Projects",
+                "Delta Management",
+                "Hydraulic Engineering",
+                "Project Management",
+                "Physics Education",
               ],
               description:
-                "Electronics Engineering student passionate about embedded systems, IoT, and hardware design.",
-              alumniOf: {
-                "@type": "CollegeOrUniversity",
-                name: "Tangail Polytechnic Institute",
-              },
+                "Executive Engineer at Bangladesh Water Development Board (BWDB), Bheramara Division, Kushtia. Dedicated civil engineer specializing in water resource management and infrastructure development in Bangladesh. BUET alumni and former Physics teacher at Udvash.",
+              hasOccupation: [
+                {
+                  "@type": "Occupation",
+                  name: "Executive Engineer",
+                  occupationLocation: {
+                    "@type": "City",
+                    name: "Kushtia",
+                  },
+                },
+                {
+                  "@type": "Occupation",
+                  name: "Sub-Divisional Engineer",
+                  occupationLocation: {
+                    "@type": "Country",
+                    name: "Bangladesh",
+                  },
+                },
+                {
+                  "@type": "Occupation",
+                  name: "Physics Teacher",
+                  description: "Former Physics teacher at Udvash",
+                },
+              ],
               birthPlace: {
                 "@type": "Place",
                 address: {
                   "@type": "PostalAddress",
-                  addressLocality: "Sirajganj",
-                  addressRegion: "Rajshahi",
                   addressCountry: "Bangladesh",
                 },
+              },
+              memberOf: {
+                "@type": "Organization",
+                name: "Institution of Engineers, Bangladesh (IEB)",
+              },
+            }),
+          }}
+        />
+
+        {/* Additional structured data for organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfilePage",
+              dateCreated: "2023-01-01",
+              dateModified: new Date().toISOString().split("T")[0],
+              mainEntity: {
+                "@type": "Person",
+                name: "Abdullah Al Luman",
+                description:
+                  "Executive Engineer at BWDB specializing in water resource management",
+                image: "/profile-image.jpg",
               },
             }),
           }}

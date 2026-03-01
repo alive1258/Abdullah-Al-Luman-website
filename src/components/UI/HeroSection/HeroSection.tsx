@@ -7,144 +7,167 @@ import {
   FiFacebook,
   FiGithub,
   FiMail,
+  FiMapPin,
+  FiBriefcase,
 } from "react-icons/fi";
 
 const HeroSection: React.FC = () => {
-  // Professional stats based on actual career data
-  const professionalStats = [
-    { label: "Years of Experience", value: "8+", icon: "⏳" },
-    { label: "Projects Completed", value: "25+", icon: "🏗️" },
-    { label: "Divisions Served", value: "3", icon: "📍" },
-    { label: "Technical Papers", value: "5+", icon: "📄" },
-  ];
-
-  // Career highlights
+  // Career highlights with icons
   const careerHighlights = [
-    "Executive Engineer at BWDB",
-    "Former Sub-Divisional Engineer",
-    "BUET Alumni",
-    "Ex-Physics Teacher at Udvash",
+    { text: "Executive Engineer at BWDB", icon: "🏢", color: "blue" },
+    { text: "Former Sub-Divisional Engineer", icon: "📐", color: "cyan" },
+    { text: "BUET Alumni", icon: "🎓", color: "teal" },
+    { text: "Ex-Physics Teacher at Udvash", icon: "🔬", color: "green" },
   ];
 
-  // Social media links with React Icons
+  // Social media links
   const socialLinks = [
     {
       href: "https://linkedin.com/in/abdullah-al-luman",
       icon: FiLinkedin,
       label: "LinkedIn",
+      color: "hover:bg-[#0077B5]",
     },
     {
       href: "https://twitter.com/abdullahalluman",
       icon: FiTwitter,
       label: "Twitter",
+      color: "hover:bg-[#1DA1F2]",
     },
     {
       href: "https://facebook.com/abdullahalluman",
       icon: FiFacebook,
       label: "Facebook",
+      color: "hover:bg-[#4267B2]",
     },
     {
       href: "https://github.com/abdullahalluman",
       icon: FiGithub,
       label: "GitHub",
+      color: "hover:bg-[#333]",
     },
     {
       href: "mailto:abdullah.luman@bwdb.gov.bd",
       icon: FiMail,
       label: "Email",
+      color: "hover:bg-gradient-to-r hover:from-blue-400 hover:to-cyan-400",
     },
+  ];
+
+  // Expertise areas
+  const expertiseAreas = [
+    "Water Resource Management",
+    "Infrastructure Development",
+    "Flood Control Systems",
+    "Irrigation Projects",
   ];
 
   return (
     <section
       id="home"
-      className="relative min-h-screen bg-black overflow-hidden pt-16 sm:pt-20"
+      className="relative min-h-screen bg-gradient-to-b md:pt-32 from-[#0a0a0a] via-[#0f0f0f] to-[#0a0a0a] overflow-hidden"
     >
-      {/* Animated background grid pattern - responsive sizing */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:2rem_2rem] sm:bg-[size:3rem_3rem] lg:bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+      {/* Modern Animated Background */}
+      <div className="absolute inset-0">
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 
-      {/* Responsive gradient orbs */}
-      <div className="absolute top-20 sm:top-40 -left-20 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full filter blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 sm:bottom-40 -right-20 w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] lg:w-[600px] lg:h-[600px] bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        {/* Gradient Orbs with modern positioning */}
+        <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 -right-20 w-[600px] h-[600px] bg-gradient-to-l from-cyan-400/20 to-teal-400/20 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
 
-      {/* Central orb for depth */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] lg:w-[800px] lg:h-[800px] bg-gradient-to-r from-blue-400/5 to-cyan-400/5 rounded-full filter blur-3xl"></div>
+        {/* Modern floating particles */}
+        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-cyan-400 rounded-full animate-ping delay-300"></div>
+        <div className="absolute top-2/3 left-2/3 w-1.5 h-1.5 bg-teal-400 rounded-full animate-ping delay-700"></div>
+      </div>
 
-      {/* Floating glow particles - responsive */}
-      <div className="absolute top-10 left-10 w-1 h-1 bg-blue-400 rounded-full animate-ping"></div>
-      <div className="absolute bottom-20 right-20 w-2 h-2 bg-cyan-400 rounded-full animate-ping delay-300"></div>
-      <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping delay-700"></div>
-      <div className="absolute bottom-1/3 left-1/4 w-1 h-1 bg-cyan-400 rounded-full animate-ping delay-500"></div>
-
-      <div className="relative container py-12 sm:py-12 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-          {/* Left Column - Text Content */}
-          <div className="text-center lg:text-left order-2 lg:order-1">
-            {/* Greeting with responsive text */}
-            <div className="inline-block relative mb-4 sm:mb-6">
-              <span className="text-xs sm:text-sm uppercase tracking-wider text-gray-500 bg-gray-900/50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-gray-800 backdrop-blur-sm">
-                👋 Welcome to my professional space
-              </span>
-              <span className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-blue-400 to-cyan-400"></span>
-            </div>
-
-            {/* Name and Title - responsive font sizes */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 leading-tight">
-              Abdullah Al
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mt-1 sm:mt-2">
+      <div className="relative container  flex items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center py-28 lg:py-0">
+          {/* Left Column - Modern Content Layout */}
+          <div className="relative z-10 order-2 lg:order-1">
+            {/* Name with modern typography */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4">
+              <span className="text-white">Abdullah Al</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 mt-2">
                 Luman
               </span>
             </h1>
 
-            {/* Current Position - responsive layout */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-xl flex items-center justify-center border border-blue-400/30">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 text-xl sm:text-2xl">
-                  🏢
+            {/* Current Position with modern styling */}
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-6">
+              <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-lg border border-blue-400/20">
+                <FiBriefcase className="text-blue-400" />
+                <span className="text-white font-semibold">
+                  Executive Engineer
                 </span>
               </div>
-              <div className="text-center sm:text-left">
-                <p className="text-base sm:text-lg lg:text-xl text-gray-300">
-                  Executive Engineer at{" "}
-                  <span className="text-white font-semibold relative group">
-                    BWDB
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                  </span>
-                </p>
-                <p className="text-xs sm:text-sm text-gray-500 mt-1 flex items-center justify-center sm:justify-start gap-2">
-                  <span className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"></span>
-                  Bheramara Division, Kushtia
-                </p>
+              <div className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <FiMapPin className="text-cyan-400" />
+                <span className="text-gray-300">Bheramara, Kushtia</span>
               </div>
             </div>
 
-            {/* Description - responsive text */}
-            <p className="text-sm sm:text-base lg:text-lg text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed border-l-2 border-gradient-to-r from-blue-400 to-cyan-400 pl-3 sm:pl-4">
-              Dedicated civil engineer specializing in water resource management
-              and infrastructure development in Bangladesh.
-            </p>
+            {/* Modern Description Card */}
+            <div className="relative mb-8 p-6 bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-xl rounded-2xl border border-gray-800 group hover:border-blue-400/30 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/5 to-cyan-400/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed relative z-10">
+                Dedicated civil engineer specializing in water resource
+                management and infrastructure development in Bangladesh.
+                Passionate about creating sustainable solutions for complex
+                water challenges.
+              </p>
+            </div>
 
-            {/* Career Highlights Pills - responsive grid */}
-            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start mb-6 sm:mb-8">
-              {careerHighlights.map((highlight, index) => (
-                <span
-                  key={index}
-                  className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-900/80 backdrop-blur-sm text-gray-300 rounded-lg text-xs sm:text-sm border border-gray-800 hover:border-blue-400 hover:border-cyan-400 hover:bg-gray-800/80 hover:scale-105 transition-all duration-300 cursor-default"
-                >
-                  {highlight}
-                </span>
+            {/* Career Highlights - Modern Chip Design */}
+            <div className="flex flex-wrap gap-2 mb-8">
+              {careerHighlights.map((item, index) => (
+                <div key={index} className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg blur opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                  <div className="relative flex items-center gap-2 px-4 py-2 bg-gray-900/90 backdrop-blur-sm rounded-lg border border-gray-800 group-hover:border-blue-400 transition-all duration-300">
+                    <span className="text-lg">{item.icon}</span>
+                    <span className="text-xs sm:text-sm text-gray-300 whitespace-nowrap">
+                      {item.text}
+                    </span>
+                  </div>
+                </div>
               ))}
             </div>
 
-            {/* Social Media Icons with React Icons - responsive positioning with glow */}
-            <div className="flex flex-col items-center lg:items-start gap-4 sm:gap-6 mb-6 sm:mb-8">
-              <div className="flex items-center gap-3 sm:gap-4">
-                <span className="text-gray-600 text-xs sm:text-sm uppercase tracking-wider">
-                  Connect
-                </span>
-                <div className="w-8 sm:w-12 h-px bg-gradient-to-r from-blue-400 to-cyan-400"></div>
+            {/* Expertise Areas - Modern Pill Design */}
+            <div className="mb-8">
+              <p className="text-sm text-gray-500 mb-3">Expertise Areas</p>
+              <div className="flex flex-wrap gap-2">
+                {expertiseAreas.map((area, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-full text-xs border border-gray-700 hover:border-blue-400 hover:bg-gray-800 transition-all duration-300 cursor-default"
+                  >
+                    {area}
+                  </span>
+                ))}
               </div>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
+            </div>
+
+            {/* Modern Action Buttons */}
+            <div className="flex flex-wrap items-center gap-4 mb-8">
+              <Link
+                href="/contact"
+                className="group relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl text-black font-medium overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-20"></span>
+                <span className="relative flex items-center gap-2">
+                  <FiMail className="w-4 h-4" />
+                  Contact Me
+                </span>
+              </Link>
+            </div>
+
+            {/* Social Links with Modern Design */}
+            <div className="flex items-center gap-4">
+              <span className="text-sm text-gray-600">Connect</span>
+              <div className="h-px w-12 bg-gradient-to-r from-blue-400 to-cyan-400"></div>
+              <div className="flex gap-2">
                 {socialLinks.map((social, index) => {
                   const IconComponent = social.icon;
                   return (
@@ -153,14 +176,13 @@ const HeroSection: React.FC = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative"
+                      className={`group relative w-10 h-10 flex items-center justify-center bg-gray-900/80 backdrop-blur-sm rounded-lg border border-gray-800 transition-all duration-300 hover:scale-110 ${social.color}`}
                     >
-                      {/* Glow effect */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-                      <div className="relative w-10 h-10 sm:w-12 sm:h-12 bg-gray-900/80 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-800 transition-all duration-300 hover:scale-110 hover:border-blue-400 hover:border-cyan-400">
-                        <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-blue-400 group-hover:to-cyan-400 transition-all duration-300" />
-                      </div>
-                      <span className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                      <IconComponent className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+
+                      {/* Tooltip */}
+                      <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-900 text-gray-300 text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gray-800">
                         {social.label}
                       </span>
                     </Link>
@@ -168,28 +190,9 @@ const HeroSection: React.FC = () => {
                 })}
               </div>
             </div>
-
-            {/* Professional Stats - responsive grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 lg:gap-4 max-w-3xl mx-auto lg:mx-0">
-              {professionalStats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-900/60 backdrop-blur-sm border border-gray-800 rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4 text-center hover:border-blue-400 hover:border-cyan-400 hover:bg-gray-800/60 transition-all duration-300 group hover:scale-105"
-                >
-                  <div className="text-xl sm:text-2xl lg:text-3xl mb-1 sm:mb-2 group-hover:scale-110 transition-transform group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400">
-                    {stat.icon}
-                  </div>
-                  <div className="text-base sm:text-lg lg:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400">
-                    {stat.value}
-                  </div>
-                  <div className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1 group-hover:text-gray-400">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
+          {/* Right Column - Modern Photo Card Design */}
           {/* Right Column - Professional Photo - responsive sizing */}
           <div className="relative flex justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0">
             {/* Main photo container - responsive dimensions */}
@@ -243,8 +246,8 @@ const HeroSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="absolute -top-4 sm:-top-6 lg:-top-8 -right-2 sm:-right-4 lg:-right-8 bg-black/90 backdrop-blur-xl border border-gray-800 rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-3 lg:p-4 shadow-2xl hover:scale-105 transition-transform duration-300 z-20">
-                <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
+              <div className="absolute -top-4 sm:-top-6 lg:-top-8 -right-2 sm:-right-4 lg:-right-11 bg-black/90 backdrop-blur-xl border border-gray-800 rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-3 lg:p-4 shadow-2xl hover:scale-105 transition-transform duration-300 z-20">
+                <div className="flex items-center gap-2 sm:gap-3 lg:gap-3">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-lg sm:rounded-xl flex items-center justify-center border border-blue-400/30">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 text-lg sm:text-xl lg:text-3xl">
                       📚
@@ -283,26 +286,22 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Scroll indicator - responsive */}
-        <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2">
-          <div className="flex flex-col items-center gap-1 sm:gap-2 lg:gap-3">
-            <span className="text-gray-700 text-[10px] sm:text-xs tracking-wider font-medium">
-              EXPLORE
-            </span>
-            <div className="w-4 h-6 sm:w-5 sm:h-8 lg:w-6 lg:h-10 border-2 border-gray-800 rounded-full flex justify-center relative group hover:border-blue-400 transition-colors">
-              <div className="w-1 h-1.5 sm:w-1.5 sm:h-2 lg:w-1.5 lg:h-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-1 sm:mt-1.5 lg:mt-2 animate-bounce group-hover:scale-110 transition-transform"></div>
-            </div>
+        {/* Modern Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2">
+          <span className="text-xs text-gray-600 tracking-wider">SCROLL</span>
+          <div className="w-6 h-10 border-2 border-gray-800 rounded-full flex justify-center relative group hover:border-blue-400 transition-colors">
+            <div className="w-1.5 h-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2 animate-bounce group-hover:scale-110 transition-transform"></div>
           </div>
         </div>
       </div>
 
-      {/* Gradient lines */}
+      {/* Modern Gradient Lines */}
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
 
-      {/* Corner glows */}
-      <div className="absolute top-0 left-0 w-32 sm:w-40 lg:w-64 h-32 sm:h-40 lg:h-64 bg-gradient-to-r from-blue-400/10 to-transparent rounded-full filter blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-32 sm:w-40 lg:w-64 h-32 sm:h-40 lg:h-64 bg-gradient-to-l from-cyan-400/10 to-transparent rounded-full filter blur-3xl"></div>
+      {/* Modern Corner Glows */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-r from-blue-400/10 to-transparent rounded-full filter blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-l from-cyan-400/10 to-transparent rounded-full filter blur-3xl"></div>
     </section>
   );
 };

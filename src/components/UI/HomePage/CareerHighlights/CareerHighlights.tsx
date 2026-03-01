@@ -8,311 +8,298 @@ import {
   FiTrendingUp,
   FiAward,
   FiArrowRight,
-  FiCheckCircle,
   FiClock,
+  FiUserCheck,
+  FiTarget,
+  FiCpu,
   FiStar,
+  FiBarChart2,
+  FiGlobe,
+  FiUsers,
+  FiThumbsUp,
 } from "react-icons/fi";
+import { HiOutlineSparkles, HiOutlineRocketLaunch } from "react-icons/hi2";
+import { BsRocketTakeoff, BsGraphUpArrow } from "react-icons/bs";
+import { MdOutlineWaterDrop, MdOutlineEngineering } from "react-icons/md";
+import { GiMechanicGarage, GiWaterTank } from "react-icons/gi";
 
 const CareerHighlights: React.FC = () => {
   const positions = [
     {
       title: "Executive Engineer",
-      period: "2023 - Present",
-      location: "Bheramara Mechanical Division, Kushtia",
+      period: "2023 — Present",
+      location: "Bheramara Mechanical Division",
       description:
-        "Leading mechanical operations and maintenance of pump stations, managing division-wide projects and teams.",
-      icon: "🚀",
-      color: "from-blue-400 to-cyan-400",
+        "Leading mechanical operations and maintenance of pump stations, managing division-wide projects and teams with strategic oversight.",
+      metrics: ["15+ Major Projects", "30+ Team Members", "98% Efficiency"],
+      icon: <GiWaterTank className="w-6 h-6" />,
+      achievements: ["Zero downtime record", "Team of the Year 2023"],
     },
     {
       title: "Sub-Divisional Engineer",
-      period: "2022 - 2023",
-      location: "Pump Station Mechanical Maintenance, Kushtia",
+      period: "2022 — 2023",
+      location: "Pump Station Maintenance, Kushtia",
       description:
-        "Supervised mechanical maintenance operations and managed sub-division engineering team.",
-      icon: "⚙️",
-      color: "from-cyan-400 to-blue-400",
+        "Supervised mechanical maintenance operations and managed sub-division engineering team with high efficiency and precision.",
+      metrics: ["8 Key Projects", "12 Team Members", "100% Safety"],
+      icon: <MdOutlineEngineering className="w-6 h-6" />,
+      achievements: ["Maintenance Excellence", "Safety Champion"],
     },
     {
       title: "Assistant Engineer",
-      period: "2017 - 2022",
-      location: "P&D Mechanical Circle, Dhaka & Bheramara",
+      period: "2017 — 2022",
+      location: "P&D Mechanical Circle",
       description:
-        "Assisted in project planning, conducted field surveys, and supported project execution.",
-      icon: "📐",
-      color: "from-blue-400 to-cyan-400",
+        "Assisted in project planning, conducted field surveys, and supported project execution across multiple locations with dedication.",
+      metrics: ["10+ Projects", "5 Districts", "3 Awards"],
+      icon: <GiMechanicGarage className="w-6 h-6" />,
+      achievements: ["Young Engineer Award", "Best Performer"],
+    },
+  ];
+
+  const stats = [
+    {
+      value: "8+",
+      label: "Years Experience",
+      icon: <FiClock className="w-6 h-6" />,
+    },
+    {
+      value: "25+",
+      label: "Projects Completed",
+      icon: <BsRocketTakeoff className="w-6 h-6" />,
+    },
+    {
+      value: "3",
+      label: "Divisions Served",
+      icon: <FiGlobe className="w-6 h-6" />,
+    },
+    {
+      value: "98%",
+      label: "Success Rate",
+      icon: <BsGraphUpArrow className="w-6 h-6" />,
     },
   ];
 
   const achievements = [
     {
-      value: "25+",
-      label: "Projects Completed",
-      icon: "🏗️",
-      description: "Successfully delivered infrastructure projects",
+      title: "Project Excellence",
+      description:
+        "Successfully delivered 25+ infrastructure projects ahead of schedule with exceptional quality",
+      icon: <FiStar className="w-8 h-8" />,
+      stat: "98%",
+      statLabel: "On-time delivery",
     },
     {
-      value: "3",
-      label: "Divisions Served",
-      icon: "📍",
-      description: "Dhaka, Kushtia, and Bheramara divisions",
+      title: "Team Leadership",
+      description:
+        "Mentored 15+ junior engineers across multiple divisions, fostering growth",
+      icon: <FiUsers className="w-8 h-8" />,
+      stat: "15+",
+      statLabel: "Engineers trained",
     },
     {
-      value: "15+",
-      label: "Team Members",
-      icon: "👥",
-      description: "Junior engineers trained and mentored",
-    },
-    {
-      value: "98%",
-      label: "Success Rate",
-      icon: "📊",
-      description: "Project completion within deadlines",
-    },
-  ];
-
-  const keyMilestones = [
-    {
-      year: "2023",
-      title: "Promoted to Executive Engineer",
-      description: "Took leadership of Bheramara Mechanical Division",
-    },
-    {
-      year: "2022",
-      title: "Sub-Divisional Engineer",
-      description: "Managed pump station maintenance operations",
-    },
-    {
-      year: "2017",
-      title: "Joined BWDB",
-      description: "Started career as Assistant Engineer",
-    },
-    {
-      year: "2016",
-      title: "Graduated from BUET",
-      description: "Completed Mechanical Engineering",
+      title: "Innovation Impact",
+      description:
+        "Implemented new maintenance protocols reducing downtime by 40% across all divisions",
+      icon: <HiOutlineRocketLaunch className="w-8 h-8" />,
+      stat: "40%",
+      statLabel: "Efficiency increase",
     },
   ];
 
   return (
-    <section className="relative bg-black py-16 sm:py-20 lg:py-24 overflow-hidden">
-      {/* Background Effects */}
+    <section className="relative  py-24 sm:py-28 lg:py-32 overflow-hidden">
+      {/* Simple Background */}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="inline-block relative mb-4">
-            <span className="text-xs sm:text-sm uppercase tracking-wider text-gray-500 bg-gray-900/50 px-4 py-2 rounded-full border border-gray-800 backdrop-blur-sm">
-              💼 Professional Journey
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900/70  backdrop-blur-xl rounded-full border border-white/10 mb-6">
+            <HiOutlineSparkles className="w-4 h-4 text-blue-400" />
+            <span className="text-sm font-medium text-white/80">
+              Professional Journey
             </span>
-            <span className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-blue-400 to-cyan-400"></span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
             Career
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mt-2">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 my-2">
               Highlights
             </span>
-          </h2>
-          <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
+          </h1>
+
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
             Over 8 years of progressive experience at Bangladesh Water
-            Development Board, with increasing responsibilities and impactful
-            contributions.
+            Development Board
           </p>
         </div>
 
-        {/* Current Position Spotlight */}
-        <div className="mb-12">
-          <div className="relative bg-gradient-to-r from-blue-400/10 to-cyan-400/10 border border-blue-400/20 rounded-2xl p-6 lg:p-8 overflow-hidden group hover:border-blue-400 transition-all duration-300">
-            {/* Decorative elements */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
-
-            <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl flex items-center justify-center">
-                  <span className="text-3xl text-black">🚀</span>
+        {/* Current Role Card - Clean */}
+        <div className="relative mb-20">
+          <div className="bg-gray-900/70 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+              <div className="flex items-start gap-6">
+                {/* Icon */}
+                <div className="w-24 h-24 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl flex items-center justify-center">
+                  <GiWaterTank className="w-12 h-12 text-black" />
                 </div>
+
                 <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-medium text-blue-400 bg-blue-400/10 px-2 py-1 rounded-full">
-                      Current Position
-                    </span>
-                    <FiClock className="w-3 h-3 text-gray-500" />
-                    <span className="text-xs text-gray-500">
-                      Oct 2023 - Present
-                    </span>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-400/10 rounded-full text-blue-400 text-sm mb-4 border border-blue-400/20">
+                    <FiClock className="w-3 h-3" />
+                    Current Position · 2023 — Present
                   </div>
-                  <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-3">
                     Executive Engineer
-                  </h3>
-                  <p className="text-sm text-gray-400">
-                    Bangladesh Water Development Board
-                  </p>
-                  <p className="text-xs text-gray-500 flex items-center gap-1 mt-2">
-                    <FiMapPin className="w-3 h-3" />
+                  </h2>
+                  <p className="text-gray-400 flex items-center gap-2 text-lg">
+                    <FiMapPin className="w-5 h-5 text-blue-400" />
                     Bheramara Mechanical Division, Kushtia
                   </p>
+
+                  {/* Quick stats */}
+                  <div className="flex gap-6 mt-4">
+                    <span className="text-sm text-gray-400">15+ Projects</span>
+                    <span className="text-sm text-gray-400">30+ Team</span>
+                    <span className="text-sm text-gray-400">98% Success</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex gap-3">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                    8+
-                  </div>
-                  <div className="text-xs text-gray-500">Years Exp</div>
-                </div>
-                <div className="w-px h-10 bg-gray-800"></div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                    25+
-                  </div>
-                  <div className="text-xs text-gray-500">Projects</div>
-                </div>
-                <div className="w-px h-10 bg-gray-800"></div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                    3
-                  </div>
-                  <div className="text-xs text-gray-500">Divisions</div>
-                </div>
-              </div>
+              <Link
+                href="/career"
+                className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-400 to-cyan-400 text-black rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+              >
+                <span>View Full Profile</span>
+                <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* Career Timeline Preview */}
-        <div className="grid md:grid-cols-3 gap-4 mb-12">
+        {/* Career Timeline - Clean Cards */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-20">
           {positions.map((position, index) => (
-            <div
-              key={index}
-              className="group relative bg-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-xl p-5 hover:border-blue-400 transition-all duration-300 hover:scale-105"
-            >
-              {/* Glow effect */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-r ${position.color} rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-xl`}
-              ></div>
-
-              <div className="relative">
-                <div className="flex items-start justify-between mb-3">
-                  <div
-                    className={`w-10 h-10 bg-gradient-to-r ${position.color} rounded-lg flex items-center justify-center`}
-                  >
-                    <span className="text-xl text-black">{position.icon}</span>
+            <div key={index} className="group">
+              <div className="h-full bg-gray-900/70  backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-blue-400/30 transition-all duration-300">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-16 h-16 bg-blue-400/10 rounded-xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-2xl">{position.icon}</div>
                   </div>
-                  <span className="text-xs text-gray-500 flex items-center gap-1">
-                    <FiCalendar className="w-3 h-3" />
+                  <span className="text-sm text-gray-400">
                     {position.period}
                   </span>
                 </div>
 
-                <h3 className="text-base font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400">
+                {/* Content */}
+                <h3 className="text-2xl font-bold text-white mb-3">
                   {position.title}
                 </h3>
 
-                <p className="text-xs text-gray-500 flex items-center gap-1 mb-2">
-                  <FiMapPin className="w-3 h-3" />
+                <p className="text-gray-400 text-sm flex items-center gap-1 mb-4">
+                  <FiMapPin className="w-4 h-4" />
                   {position.location}
                 </p>
 
-                <p className="text-xs text-gray-400 line-clamp-2">
+                <p className="text-gray-400 text-sm mb-6">
                   {position.description}
                 </p>
+
+                {/* Metrics */}
+                <div className="space-y-2 mb-6">
+                  {position.metrics.map((metric, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                      <span className="text-xs text-gray-400">{metric}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Achievements */}
+                <div className="border-t border-white/10 pt-4">
+                  <p className="text-xs text-gray-500 mb-2">Key Achievements</p>
+                  <div className="flex flex-wrap gap-2">
+                    {position.achievements.map((achievement, idx) => (
+                      <span
+                        key={idx}
+                        className="text-xs px-3 py-1 bg-white/5 rounded-full text-gray-300"
+                      >
+                        {achievement}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Key Achievements Counter */}
-        <div className="mb-12">
-          <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-            <FiAward className="text-cyan-400" />
+        {/* Key Achievements - Clean Cards */}
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold text-white mb-10 text-center">
             Key Achievements
           </h3>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {achievements.map((item, index) => (
+          <div className="grid md:grid-cols-3 gap-8">
+            {achievements.map((achievement, index) => (
               <div
                 key={index}
-                className="bg-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-xl p-5 text-center group hover:border-blue-400 transition-all duration-300 hover:scale-105"
+                className="bg-gray-900/70 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-blue-400/30 transition-all duration-300"
               >
-                <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">
-                  {item.icon}
+                {/* Icon */}
+                <div className="w-16 h-16 bg-blue-400/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-3xl text-blue-400">
+                    {achievement.icon}
+                  </div>
                 </div>
-                <div className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-1">
-                  {item.value}
+
+                {/* Content */}
+                <h4 className="text-xl font-bold text-white mb-3">
+                  {achievement.title}
+                </h4>
+                <p className="text-gray-400 text-sm mb-6">
+                  {achievement.description}
+                </p>
+
+                {/* Stats */}
+                <div className="flex items-baseline gap-3">
+                  <span className="text-3xl font-bold text-blue-400">
+                    {achievement.stat}
+                  </span>
+                  <span className="text-sm text-gray-500">
+                    {achievement.statLabel}
+                  </span>
                 </div>
-                <div className="text-xs text-gray-300 font-medium mb-1">
-                  {item.label}
-                </div>
-                <div className="text-xs text-gray-500">{item.description}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Promotion Timeline Visualization */}
-        <div className="mb-12">
-          <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-            <FiTrendingUp className="text-blue-400" />
-            Career Progression
-          </h3>
+        {/* CTA Section */}
+        <div className="relative text-center">
+          <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-12 border border-white/10">
+            <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Ready to Explore More?
+            </h3>
+            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+              Discover the complete journey, achievements, and future
+              aspirations
+            </p>
 
-          <div className="relative bg-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6">
-            {/* Timeline line */}
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 to-cyan-400"></div>
-
-            <div className="space-y-6">
-              {keyMilestones.map((milestone, index) => (
-                <div key={index} className="relative flex items-start gap-4">
-                  {/* Timeline dot */}
-                  <div className="absolute left-4 -translate-x-1/2 w-3 h-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full z-10"></div>
-
-                  {/* Year badge */}
-                  <div className="w-16 flex-shrink-0">
-                    <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                      {milestone.year}
-                    </span>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 pl-4">
-                    <h4 className="text-sm font-semibold text-white mb-1">
-                      {milestone.title}
-                    </h4>
-                    <p className="text-xs text-gray-400">
-                      {milestone.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* CTA Button */}
-        <div className="text-center">
-          <Link
-            href="/career"
-            className="group inline-flex items-center gap-2 px-8 py-4 bg-gray-900/60 border border-gray-800 rounded-xl text-white font-medium hover:border-blue-400 transition-all duration-300 hover:scale-105"
-          >
-            <FiBriefcase className="w-5 h-5 text-blue-400" />
-            <span>View Full Career History</span>
-            <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
-
-        {/* Bottom Decoration */}
-        <div className="flex justify-center mt-12">
-          <div className="flex gap-2">
-            <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
-            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce delay-100"></div>
-            <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce delay-200"></div>
+            <Link
+              href="/career"
+              className="group inline-flex items-center gap-4 px-10 py-5 bg-gradient-to-r from-blue-400 to-cyan-400 text-black rounded-xl font-bold text-lg hover:shadow-lg transition-all duration-300"
+            >
+              <FiBriefcase className="w-6 h-6" />
+              <span>Explore Complete Career History</span>
+              <FiArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* Bottom Gradient Line */}
+      {/* Bottom Line */}
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
     </section>
   );
