@@ -3,17 +3,11 @@ import React from "react";
 import Link from "next/link";
 import {
   FiBookOpen,
-  FiCalendar,
   FiMapPin,
   FiAward,
   FiArrowRight,
   FiStar,
-  FiBook,
-  FiGraduationCap,
-  FiTrendingUp,
-  FiTarget,
   FiUsers,
-  FiClock,
 } from "react-icons/fi";
 import { HiOutlineSparkles, HiOutlineAcademicCap } from "react-icons/hi2";
 import { MdSchool, MdScience, MdEngineering } from "react-icons/md";
