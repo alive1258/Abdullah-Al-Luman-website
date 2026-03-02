@@ -14,14 +14,37 @@ import {
   FiMessageCircle,
   FiFilter,
   FiX,
+  FiShare2,
+  FiDownload,
+  FiPrinter,
+  FiEye as FiView,
 } from "react-icons/fi";
+
+interface BlogPost {
+  id: number;
+  title: string;
+  excerpt: string;
+  author: string;
+  date: string;
+  readTime: string;
+  views: number;
+  category: string;
+  tags: string[];
+  image: string;
+  featured: boolean;
+  likes: number;
+  comments: number;
+  content?: string;
+}
 
 const RecentBlogPosts: React.FC = () => {
   const [hoveredPost, setHoveredPost] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [showFilters, setShowFilters] = useState(false);
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const blogPosts = [
+  const blogPosts: BlogPost[] = [
     {
       id: 1,
       title: "Modern Approaches to Pump Station Maintenance in Bangladesh",
@@ -37,6 +60,31 @@ const RecentBlogPosts: React.FC = () => {
       featured: true,
       likes: 45,
       comments: 12,
+      content: `
+        <h2>Introduction</h2>
+        <p>Bangladesh's water management infrastructure faces unique challenges due to its geographical location and climate conditions. Pump stations play a crucial role in maintaining water flow and preventing flooding in both urban and rural areas.</p>
+        
+        <h2>Current Challenges</h2>
+        <p>The maintenance of pump stations in Bangladesh requires innovative approaches that consider:</p>
+        <ul>
+          <li>High water table and seasonal flooding</li>
+          <li>Salinity issues in coastal areas</li>
+          <li>Limited access to spare parts</li>
+          <li>Skilled workforce availability</li>
+        </ul>
+        
+        <h2>Modern Solutions</h2>
+        <p>Recent technological advancements have introduced several innovative solutions:</p>
+        <ul>
+          <li>IoT sensors for real-time monitoring</li>
+          <li>Predictive maintenance algorithms</li>
+          <li>Solar-powered pump systems</li>
+          <li>Remote diagnostic tools</li>
+        </ul>
+        
+        <h2>Case Studies</h2>
+        <p>Several successful implementations across Bangladesh demonstrate the effectiveness of these modern approaches...</p>
+      `,
     },
     {
       id: 2,
@@ -53,6 +101,10 @@ const RecentBlogPosts: React.FC = () => {
       featured: false,
       likes: 32,
       comments: 8,
+      content: `
+        <h2>The Delta Challenge</h2>
+        <p>The Ganges-Brahmaputra delta is one of the most dynamic and vulnerable regions in the world...</p>
+      `,
     },
     {
       id: 3,
@@ -69,6 +121,10 @@ const RecentBlogPosts: React.FC = () => {
       featured: true,
       likes: 89,
       comments: 23,
+      content: `
+        <h2>Starting Out</h2>
+        <p>When I first joined the Bangladesh Water Development Board (BWDB) five years ago...</p>
+      `,
     },
     {
       id: 4,
@@ -85,6 +141,10 @@ const RecentBlogPosts: React.FC = () => {
       featured: false,
       likes: 28,
       comments: 15,
+      content: `
+        <h2>The Flood Challenge</h2>
+        <p>Bangladesh faces annual flooding that affects millions of people...</p>
+      `,
     },
     {
       id: 5,
@@ -101,6 +161,10 @@ const RecentBlogPosts: React.FC = () => {
       featured: false,
       likes: 56,
       comments: 19,
+      content: `
+        <h2>The Digital Revolution in Water Management</h2>
+        <p>Technology is transforming how we manage water resources...</p>
+      `,
     },
     {
       id: 6,
@@ -117,6 +181,10 @@ const RecentBlogPosts: React.FC = () => {
       featured: false,
       likes: 67,
       comments: 14,
+      content: `
+        <h2>Why Fitness Matters for Engineers</h2>
+        <p>Long hours at desks or in the field can take a toll on your health...</p>
+      `,
     },
     {
       id: 7,
@@ -133,6 +201,10 @@ const RecentBlogPosts: React.FC = () => {
       featured: false,
       likes: 52,
       comments: 9,
+      content: `
+        <h2>Mental Health in Engineering</h2>
+        <p>Field engineers face unique mental health challenges...</p>
+      `,
     },
   ];
 
@@ -158,7 +230,11 @@ const RecentBlogPosts: React.FC = () => {
       icon: "🏭",
       count: blogPosts.filter((p) => p.category === "Industry Insights").length,
     },
-
+    {
+      name: "Technology",
+      icon: "💡",
+      count: blogPosts.filter((p) => p.category === "Technology").length,
+    },
     {
       name: "Fitness",
       icon: "💪",
@@ -171,303 +247,459 @@ const RecentBlogPosts: React.FC = () => {
       ? blogPosts
       : blogPosts.filter((post) => post.category === selectedCategory);
 
+  const openModal = (post: BlogPost) => {
+    setSelectedPost(post);
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedPost(null);
+    document.body.style.overflow = "unset";
+  };
+
   return (
-    <section className="relative  py-16 sm:py-20 lg:py-24 overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        {/* Floating Elements */}
-        <div className="absolute top-20 right-1/4 text-6xl text-gray-800/10">
-          📝
-        </div>
-        <div className="absolute bottom-20 left-1/4 text-6xl text-gray-800/10">
-          💪
-        </div>
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="inline-block relative mb-4">
-            <span className="text-xs sm:text-sm uppercase tracking-wider text-gray-500 bg-gray-900/50 px-4 py-2 rounded-full border border-gray-800 backdrop-blur-sm">
-              📝 Insights & Ideas
-            </span>
-            <span className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-blue-400 to-cyan-400"></span>
+    <>
+      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          {/* Floating Elements */}
+          <div className="absolute top-20 right-1/4 text-6xl text-gray-800/10">
+            📝
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Recent
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mt-2">
-              Blog Posts
-            </span>
-          </h2>
-          <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
-            Sharing knowledge, experiences, and perspectives on water
-            management, engineering challenges, professional development, and
-            fitness for a balanced life.
-          </p>
+          <div className="absolute bottom-20 left-1/4 text-6xl text-gray-800/10">
+            💪
+          </div>
         </div>
 
-        {/* Category Filters - Enhanced with icons and counts */}
-        <div className="mb-10">
-          {/* Mobile Filter Toggle */}
-          <button
-            onClick={() => setShowFilters(!showFilters)}
-            className="lg:hidden w-full mb-4 px-4 py-3 bg-gray-900/60 border border-gray-800 rounded-xl text-white flex items-center justify-between"
-          >
-            <span className="flex items-center gap-2">
-              <FiFilter className="text-blue-400" />
-              Filter by Category
-            </span>
-            {showFilters ? <FiX /> : <FiFilter />}
-          </button>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <div className="inline-block relative mb-4">
+              <span className="text-xs sm:text-sm uppercase tracking-wider text-gray-500 bg-gray-900/50 px-4 py-2 rounded-full border border-gray-800 backdrop-blur-sm">
+                📝 Insights & Ideas
+              </span>
+              <span className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-blue-400 to-cyan-400"></span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+              Recent
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mt-2">
+                Blog Posts
+              </span>
+            </h2>
+            <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
+              Sharing knowledge, experiences, and perspectives on water
+              management, engineering challenges, professional development, and
+              fitness for a balanced life.
+            </p>
+          </div>
 
-          {/* Category Grid */}
-          <div
-            className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-2 ${showFilters ? "block" : "hidden lg:grid"}`}
-          >
-            {categories.map((category) => (
-              <button
-                key={category.name}
-                onClick={() => {
-                  setSelectedCategory(category.name);
-                  setShowFilters(false);
-                }}
-                className={`group relative px-3 py-2 rounded-xl text-sm font-medium transition-all duration-300 overflow-hidden ${
-                  selectedCategory === category.name
-                    ? "bg-linear-to-r from-blue-400 to-cyan-400 text-black"
-                    : "bg-gray-900/60 text-gray-400 hover:text-white border border-gray-800 hover:border-blue-400"
-                }`}
+          {/* Category Filters - Enhanced with icons and counts */}
+          <div className="mb-10">
+            {/* Mobile Filter Toggle */}
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className="lg:hidden w-full mb-4 px-4 py-3 bg-gray-900/60 border border-gray-800 rounded-xl text-white flex items-center justify-between"
+            >
+              <span className="flex items-center gap-2">
+                <FiFilter className="text-blue-400" />
+                Filter by Category
+              </span>
+              {showFilters ? <FiX /> : <FiFilter />}
+            </button>
+
+            {/* Category Grid */}
+            <div
+              className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-2 ${
+                showFilters ? "block" : "hidden lg:grid"
+              }`}
+            >
+              {categories.map((category) => (
+                <button
+                  key={category.name}
+                  onClick={() => {
+                    setSelectedCategory(category.name);
+                    setShowFilters(false);
+                  }}
+                  className={`group relative px-3 py-2 rounded-xl text-sm font-medium transition-all duration-300 overflow-hidden ${
+                    selectedCategory === category.name
+                      ? "bg-gradient-to-r from-blue-400 to-cyan-400 text-black"
+                      : "bg-gray-900/60 text-gray-400 hover:text-white border border-gray-800 hover:border-blue-400"
+                  }`}
+                >
+                  {/* Hover Effect */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                      selectedCategory === category.name ? "hidden" : ""
+                    }`}
+                  ></div>
+
+                  <div className="relative flex space-x-2 items-center">
+                    <span className="text-xl mb-1">{category.icon}</span>
+                    <span className="text-xs">{category.name}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Active Filter Indicator */}
+            {selectedCategory !== "All" && (
+              <div className="flex items-center justify-center mt-4 gap-2">
+                <span className="text-sm text-gray-400">Active Filter:</span>
+                <span className="px-3 py-1 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full text-sm text-blue-400 border border-blue-400/30">
+                  {selectedCategory}
+                </span>
+                <button
+                  onClick={() => setSelectedCategory("All")}
+                  className="text-xs text-gray-500 hover:text-white transition-colors"
+                >
+                  ✕ Clear
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Posts Grid - Exactly 3 cards per row */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {filteredPosts.map((post) => (
+              <div
+                key={post.id}
+                className="group relative bg-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden hover:border-blue-400 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-400/10 cursor-pointer"
+                onMouseEnter={() => setHoveredPost(post.id)}
+                onMouseLeave={() => setHoveredPost(null)}
+                onClick={() => openModal(post)}
               >
-                {/* Hover Effect */}
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-xl"></div>
+
+                {/* Image/Icon Section */}
+                <div className="relative h-40 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                  <span className="text-5xl text-gray-700 group-hover:scale-110 transition-transform duration-500">
+                    {post.image}
+                  </span>
+
+                  {/* Featured Badge */}
+                  {post.featured && (
+                    <div className="absolute top-3 left-3">
+                      <span className="px-2 py-1 bg-gradient-to-r from-blue-400 to-cyan-400 text-black text-[10px] font-bold rounded-full flex items-center gap-1">
+                        <FiBookOpen className="w-2 h-2" />
+                        Featured
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Category Badge */}
+                  <div className="absolute top-3 right-3">
+                    <span className="px-2 py-1 bg-black/80 backdrop-blur-sm rounded-full text-[10px] text-gray-300 border border-gray-700 flex items-center gap-1">
+                      <FiTag className="w-2 h-2" />
+                      {post.category}
+                    </span>
+                  </div>
+
+                  {/* View Details Overlay - Shows on Hover */}
+                  <div
+                    className={`absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center transition-all duration-300 ${
+                      hoveredPost === post.id
+                        ? "opacity-100"
+                        : "opacity-0 pointer-events-none"
+                    }`}
+                  >
+                    <div className="transform transition-all duration-300 scale-90 group-hover:scale-100">
+                      <span className="px-4 py-2 bg-gradient-to-r from-blue-400 to-cyan-400 text-black text-sm font-bold rounded-lg flex items-center gap-2">
+                        <FiView className="w-4 h-4" />
+                        View Details
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-5">
+                  {/* Meta Info */}
+                  <div className="flex items-center gap-2 mb-2 flex-wrap">
+                    <span className="text-xs text-gray-500 flex items-center gap-1">
+                      <FiCalendar className="w-3 h-3" />
+                      {post.date}
+                    </span>
+                    <span className="text-gray-600">•</span>
+                    <span className="text-xs text-gray-500 flex items-center gap-1">
+                      <FiClock className="w-3 h-3" />
+                      {post.readTime}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-base font-bold text-white mb-2 line-clamp-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 transition-all">
+                    {post.title}
+                  </h3>
+
+                  {/* Excerpt */}
+                  <p className="text-xs text-gray-400 mb-3 line-clamp-2">
+                    {post.excerpt}
+                  </p>
+
+                  {/* Author & Engagement Stats */}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center">
+                        <FiUser className="w-3 h-3 text-blue-400" />
+                      </div>
+                      <span className="text-xs text-gray-400">
+                        {post.author.split(" ").pop()}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs text-gray-500 flex items-center gap-1">
+                        <FiEye className="w-3 h-3" />
+                        {post.views}
+                      </span>
+                      <span className="text-xs text-gray-500 flex items-center gap-1">
+                        <FiHeart className="w-3 h-3" />
+                        {post.likes}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {post.tags.slice(0, 2).map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-1.5 py-0.5 bg-gray-800 rounded text-[8px] text-gray-500"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                    {post.tags.length > 2 && (
+                      <span className="text-[8px] text-gray-600">
+                        +{post.tags.length - 2}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Hover Indicator */}
                 <div
-                  className={`absolute inset-0 bg-linear-to-r from-blue-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-                    selectedCategory === category.name ? "hidden" : ""
+                  className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transform origin-left transition-transform duration-300 ${
+                    hoveredPost === post.id ? "scale-x-100" : "scale-x-0"
                   }`}
                 ></div>
-
-                <div className="relative flex space-x-2 items-center">
-                  <span className="text-xl mb-1">{category.icon}</span>
-                  <span className="text-xs">{category.name}</span>
-                </div>
-              </button>
+              </div>
             ))}
           </div>
 
-          {/* Active Filter Indicator */}
-          {selectedCategory !== "All" && (
-            <div className="flex items-center justify-center mt-4 gap-2">
-              <span className="text-sm text-gray-400">Active Filter:</span>
-              <span className="px-3 py-1 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full text-sm text-blue-400 border border-blue-400/30">
-                {selectedCategory}
-              </span>
-              <button
-                onClick={() => setSelectedCategory("All")}
-                className="text-xs text-gray-500 hover:text-white transition-colors"
-              >
-                ✕ Clear
-              </button>
+          {/* Fitness Highlight */}
+          <div className="mb-12">
+            <div className="bg-gradient-to-r from-green-400/10 to-blue-400/10 border border-green-400/20 rounded-2xl p-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-blue-400 rounded-xl flex items-center justify-center">
+                  <span className="text-2xl">💪</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1">
+                    New Fitness Category
+                  </h3>
+                  <p className="text-sm text-gray-400">
+                    Check out our latest articles on fitness, health, and
+                    wellness specifically designed for engineers and field
+                    professionals.
+                  </p>
+                </div>
+              </div>
             </div>
-          )}
-        </div>
+          </div>
 
-        {/* Posts Grid - Exactly 3 cards per row */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {filteredPosts.map((post) => (
-            <div
-              key={post.id}
-              className="group relative bg-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden hover:border-blue-400 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-400/10"
-              onMouseEnter={() => setHoveredPost(post.id)}
-              onMouseLeave={() => setHoveredPost(null)}
+          {/* Newsletter Subscription */}
+          <div className="relative bg-gradient-to-r from-blue-400/10 to-cyan-400/10 border border-blue-400/20 rounded-2xl p-6 lg:p-8 mb-12">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400/5 via-transparent to-transparent"></div>
+
+            <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl flex items-center justify-center">
+                  <FiBookOpen className="w-6 h-6 lg:w-8 lg:h-8 text-black" />
+                </div>
+                <div>
+                  <h3 className="text-lg lg:text-xl font-bold text-white mb-1">
+                    Never Miss an Update
+                  </h3>
+                  <p className="text-sm text-gray-400">
+                    Subscribe to get notified about new articles and insights
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex w-full lg:w-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 lg:w-64 px-4 py-3 bg-black/60 border border-gray-800 rounded-l-lg text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-400 transition-colors"
+                />
+                <button className="px-6 py-3 bg-gradient-to-r from-blue-400 to-cyan-400 text-black rounded-r-lg font-medium text-sm hover:shadow-lg hover:shadow-blue-400/25 transition-all">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* View All Button */}
+          <div className="text-center">
+            <Link
+              href="/blog"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-gray-900/60 border border-gray-800 rounded-xl text-white font-medium hover:border-blue-400 transition-all duration-300 hover:scale-105"
             >
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-xl"></div>
+              <FiBookOpen className="w-5 h-5 text-blue-400" />
+              <span>View All Articles</span>
+              <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
 
-              {/* Image/Icon Section */}
-              <div className="relative h-40 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                <span className="text-5xl text-gray-700 group-hover:scale-110 transition-transform duration-500">
-                  {post.image}
-                </span>
+          {/* Bottom Decoration */}
+          <div className="flex justify-center mt-12">
+            <div className="flex gap-2">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
+              <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce delay-100"></div>
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-bounce delay-200"></div>
+            </div>
+          </div>
+        </div>
 
-                {/* Featured Badge */}
-                {post.featured && (
-                  <div className="absolute top-3 left-3">
-                    <span className="px-2 py-1 bg-gradient-to-r from-blue-400 to-cyan-400 text-black text-[10px] font-bold rounded-full flex items-center gap-1">
-                      <FiBookOpen className="w-2 h-2" />
-                      Featured
-                    </span>
-                  </div>
-                )}
+        {/* Bottom Gradient Line */}
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+      </section>
 
-                {/* Category Badge */}
-                <div className="absolute top-3 right-3">
-                  <span className="px-2 py-1 bg-black/80 backdrop-blur-sm rounded-full text-[10px] text-gray-300 border border-gray-700 flex items-center gap-1">
-                    <FiTag className="w-2 h-2" />
-                    {post.category}
-                  </span>
-                </div>
-              </div>
+      {/* Blog Modal */}
+      {isModalOpen && selectedPost && (
+        <div
+          className="fixed inset-0 z-50 overflow-y-auto"
+          aria-labelledby="modal-title"
+          role="dialog"
+          aria-modal="true"
+        >
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
+            onClick={closeModal}
+          ></div>
 
-              {/* Content */}
-              <div className="p-5">
-                {/* Meta Info */}
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs text-gray-500 flex items-center gap-1">
-                    <FiCalendar className="w-3 h-3" />
-                    {post.date}
-                  </span>
-                  <span className="text-gray-600">•</span>
-                  <span className="text-xs text-gray-500 flex items-center gap-1">
-                    <FiClock className="w-3 h-3" />
-                    {post.readTime}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-base font-bold text-white mb-2 line-clamp-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 transition-all">
-                  {post.title}
-                </h3>
-
-                {/* Excerpt */}
-                <p className="text-xs text-gray-400 mb-3 line-clamp-2">
-                  {post.excerpt}
-                </p>
-
-                {/* Author & Engagement Stats */}
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center">
-                      <FiUser className="w-3 h-3 text-blue-400" />
-                    </div>
-                    <span className="text-xs text-gray-400">
-                      {post.author.split(" ").pop()}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs text-gray-500 flex items-center gap-1">
-                      <FiEye className="w-3 h-3" />
-                      {post.views}
-                    </span>
-                    <span className="text-xs text-gray-500 flex items-center gap-1">
-                      <FiHeart className="w-3 h-3" />
-                      {post.likes}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1 mb-3">
-                  {post.tags.slice(0, 2).map((tag, index) => (
-                    <span
-                      key={index}
-                      className="px-1.5 py-0.5 bg-gray-800 rounded text-[8px] text-gray-500"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-                  {post.tags.length > 2 && (
-                    <span className="text-[8px] text-gray-600">
-                      +{post.tags.length - 2}
-                    </span>
-                  )}
-                </div>
-
-                {/* Read More Link */}
-                <Link
-                  href={`/blog/${post.id}`}
-                  className="inline-flex items-center gap-1 text-xs font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:gap-2 transition-all"
-                >
-                  Read More
-                  <FiArrowRight className="w-3 h-3" />
-                </Link>
-              </div>
-
-              {/* Hover Indicator */}
+          {/* Modal Container */}
+          <div className="fixed inset-0 z-10 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 sm:p-6">
+              {/* Modal Content */}
               <div
-                className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transform origin-left transition-transform duration-300 ${
-                  hoveredPost === post.id ? "scale-x-100" : "scale-x-0"
-                }`}
-              ></div>
-            </div>
-          ))}
-        </div>
+                className="relative w-full max-w-4xl bg-gray-900 rounded-2xl shadow-2xl transform transition-all"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Close Button */}
+                <button
+                  onClick={closeModal}
+                  className="absolute top-4 right-4 z-20 p-2 bg-gray-800/80 backdrop-blur-sm rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-300"
+                >
+                  <FiX className="w-5 h-5" />
+                </button>
 
-        {/* Fitness Highlight */}
-        <div className="mb-12">
-          <div className="bg-gradient-to-r from-green-400/10 to-blue-400/10 border border-green-400/20 rounded-2xl p-6">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-blue-400 rounded-xl flex items-center justify-center">
-                <span className="text-2xl">💪</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-white mb-1">
-                  New Fitness Category
-                </h3>
-                <p className="text-sm text-gray-400">
-                  Check out our latest articles on fitness, health, and wellness
-                  specifically designed for engineers and field professionals.
-                </p>
+                {/* Modal Body */}
+                <div className="max-h-[90vh] overflow-y-auto">
+                  {/* Header Image/Icon */}
+                  <div className="relative h-48 sm:h-64 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                    <span className="text-7xl sm:text-8xl text-gray-700">
+                      {selectedPost.image}
+                    </span>
+
+                    {/* Category Badge */}
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1.5 bg-black/60 backdrop-blur-sm rounded-full text-xs text-gray-300 border border-gray-700 flex items-center gap-1">
+                        <FiTag className="w-3 h-3" />
+                        {selectedPost.category}
+                      </span>
+                    </div>
+
+                    {/* Featured Badge */}
+                    {selectedPost.featured && (
+                      <div className="absolute top-4 right-16">
+                        <span className="px-3 py-1.5 bg-gradient-to-r from-blue-400 to-cyan-400 text-black text-xs font-bold rounded-full flex items-center gap-1">
+                          <FiBookOpen className="w-3 h-3" />
+                          Featured
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Content Area */}
+                  <div className="p-6 sm:p-8">
+                    {/* Title */}
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                      {selectedPost.title}
+                    </h2>
+
+                    {/* Meta Info */}
+                    <div className="flex flex-wrap items-center gap-4 mb-6">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center">
+                          <FiUser className="w-4 h-4 text-blue-400" />
+                        </div>
+                        <span className="text-sm text-gray-300">
+                          {selectedPost.author}
+                        </span>
+                      </div>
+                      <span className="text-gray-600">•</span>
+                      <span className="text-sm text-gray-400 flex items-center gap-1">
+                        <FiCalendar className="w-4 h-4" />
+                        {selectedPost.date}
+                      </span>
+                      <span className="text-gray-600">•</span>
+                      <span className="text-sm text-gray-400 flex items-center gap-1">
+                        <FiClock className="w-4 h-4" />
+                        {selectedPost.readTime}
+                      </span>
+                    </div>
+
+                    {/* Engagement Stats */}
+                    <div className="flex items-center gap-6 mb-6">
+                      <span className="text-sm text-gray-400 flex items-center gap-2">
+                        <FiEye className="w-4 h-4" />
+                        {selectedPost.views} views
+                      </span>
+                      <span className="text-sm text-gray-400 flex items-center gap-2">
+                        <FiHeart className="w-4 h-4" />
+                        {selectedPost.likes} likes
+                      </span>
+                      <span className="text-sm text-gray-400 flex items-center gap-2">
+                        <FiMessageCircle className="w-4 h-4" />
+                        {selectedPost.comments} comments
+                      </span>
+                    </div>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {selectedPost.tags.map((tag, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 bg-gray-800 rounded-lg text-xs text-gray-400"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Content */}
+                    <div className="prose prose-invert max-w-none">
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: selectedPost.content || "",
+                        }}
+                        className="text-gray-300 text-sm sm:text-base leading-relaxed space-y-4"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Newsletter Subscription */}
-        <div className="relative bg-gradient-to-r from-blue-400/10 to-cyan-400/10 border border-blue-400/20 rounded-2xl p-6 lg:p-8 mb-12">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400/5 via-transparent to-transparent"></div>
-
-          <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl flex items-center justify-center">
-                <FiBookOpen className="w-6 h-6 lg:w-8 lg:h-8 text-black" />
-              </div>
-              <div>
-                <h3 className="text-lg lg:text-xl font-bold text-white mb-1">
-                  Never Miss an Update
-                </h3>
-                <p className="text-sm text-gray-400">
-                  Subscribe to get notified about new articles and insights
-                </p>
-              </div>
-            </div>
-
-            <div className="flex w-full lg:w-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 lg:w-64 px-4 py-3 bg-black/60 border border-gray-800 rounded-l-lg text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-400 transition-colors"
-              />
-              <button className="px-6 py-3 bg-gradient-to-r from-blue-400 to-cyan-400 text-black rounded-r-lg font-medium text-sm hover:shadow-lg hover:shadow-blue-400/25 transition-all">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* View All Button */}
-        <div className="text-center">
-          <Link
-            href="/blog"
-            className="group inline-flex items-center gap-2 px-8 py-4 bg-gray-900/60 border border-gray-800 rounded-xl text-white font-medium hover:border-blue-400 transition-all duration-300 hover:scale-105"
-          >
-            <FiBookOpen className="w-5 h-5 text-blue-400" />
-            <span>View All Articles</span>
-            <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
-
-        {/* Bottom Decoration */}
-        <div className="flex justify-center mt-12">
-          <div className="flex gap-2">
-            <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
-            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce delay-100"></div>
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-bounce delay-200"></div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Gradient Line */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
-    </section>
+      )}
+    </>
   );
 };
 

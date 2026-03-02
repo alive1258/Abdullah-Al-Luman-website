@@ -75,33 +75,6 @@ const EducationPreview: React.FC = () => {
     ],
   };
 
-  const academicStats = [
-    {
-      label: "BUET Alumni",
-      value: "Mechanical Eng.",
-      icon: <MdEngineering className="w-4 h-4 sm:w-5 sm:h-5" />,
-      color: "from-blue-400 to-cyan-400",
-    },
-    {
-      label: "Students Taught",
-      value: "500+",
-      icon: <FiUsers className="w-4 h-4 sm:w-5 sm:h-5" />,
-      color: "from-cyan-400 to-teal-400",
-    },
-    {
-      label: "Academic Awards",
-      value: "5+",
-      icon: <FiAward className="w-4 h-4 sm:w-5 sm:h-5" />,
-      color: "from-teal-400 to-emerald-400",
-    },
-    {
-      label: "Teaching Rating",
-      value: "4.9/5",
-      icon: <FiStar className="w-4 h-4 sm:w-5 sm:h-5" />,
-      color: "from-amber-400 to-orange-400",
-    },
-  ];
-
   const timelineEvents = [
     { year: "2016", event: "BUET Graduate", icon: "🎓" },
     { year: "2016-17", event: "Udvash Faculty", icon: "📐" },
@@ -110,13 +83,13 @@ const EducationPreview: React.FC = () => {
   ];
 
   return (
-    <section className="relative bg-black py-12 sm:py-16 lg:py-20 xl:py-24 overflow-hidden">
+    <section className="relative py-12 sm:py-16 lg:py-20 xl:py-24 overflow-hidden">
       {/* Simple Background */}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 mb-4 sm:mb-6">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-900/60 backdrop-blur-xl rounded-full border border-white/10 mb-4 sm:mb-6">
             <HiOutlineSparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
             <span className="text-xs sm:text-sm font-medium text-white/80">
               Academic Background
@@ -138,7 +111,7 @@ const EducationPreview: React.FC = () => {
 
         {/* BUET Spotlight */}
         <div className="mb-12 sm:mb-16">
-          <div className="bg-white/5 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-white/10">
+          <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-white/10">
             <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 lg:gap-8">
               {/* Icon */}
               <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl sm:rounded-3xl flex items-center justify-center">
@@ -176,7 +149,7 @@ const EducationPreview: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
           {educationData.map((edu, index) => (
             <div key={index} className="group">
-              <div className="h-full bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 border border-white/10 hover:border-blue-400/30 transition-all duration-300">
+              <div className="h-full bg-gray-900/60 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 border border-white/10 hover:border-blue-400/30 transition-all duration-300">
                 {/* Badge */}
                 <div className="flex items-start justify-between mb-4">
                   <div
@@ -186,7 +159,7 @@ const EducationPreview: React.FC = () => {
                       {edu.icon}
                     </div>
                   </div>
-                  <span className="text-xs text-gray-400 bg-white/5 px-2 py-1 rounded-full">
+                  <span className="text-xs text-gray-400 bg-gray-900/60 px-2 py-1 rounded-full">
                     {edu.period}
                   </span>
                 </div>
@@ -228,7 +201,7 @@ const EducationPreview: React.FC = () => {
 
         {/* Udvash Teaching Experience */}
         <div className="relative mb-12 sm:mb-16">
-          <div className="bg-white/5 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-white/10">
+          <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-white/10">
             <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 lg:gap-8">
               {/* Icon */}
               <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl sm:rounded-3xl flex items-center justify-center">
@@ -277,7 +250,7 @@ const EducationPreview: React.FC = () => {
             {timelineEvents.map((event, index) => (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-xl rounded-lg sm:rounded-xl p-3 sm:p-4 text-center border border-white/10 hover:border-blue-400/30 transition-all duration-300"
+                className="bg-gray-900/60 backdrop-blur-xl rounded-lg sm:rounded-xl p-3 sm:p-4 text-center border border-white/10 hover:border-blue-400/30 transition-all duration-300"
               >
                 <span className="text-xl sm:text-2xl mb-1 block">
                   {event.icon}
@@ -295,7 +268,7 @@ const EducationPreview: React.FC = () => {
         <div className="text-center mb-6 sm:mb-8">
           <Link
             href="/education#primary"
-            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white/5 backdrop-blur-xl rounded-lg border border-white/10 text-xs sm:text-sm text-gray-400 hover:text-white hover:border-blue-400 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gray-900/60 backdrop-blur-xl rounded-lg border border-white/10 text-xs sm:text-sm text-gray-400 hover:text-white hover:border-blue-400 transition-all duration-300"
           >
             <MdSchool className="w-4 h-4" />
             <span>Krishnodia Govt. Primary School (2002 - 2008)</span>
@@ -305,7 +278,7 @@ const EducationPreview: React.FC = () => {
 
         {/* CTA Section */}
         <div className="relative text-center">
-          <div className="bg-white/5 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-white/10">
+          <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-white/10">
             <HiOutlineAcademicCap className="w-10 h-10 sm:w-12 sm:h-12 text-blue-400 mx-auto mb-3" />
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
               Explore Full Academic History

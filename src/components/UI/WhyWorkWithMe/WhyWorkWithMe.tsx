@@ -86,7 +86,7 @@ const WhyWorkWithMe: React.FC = () => {
   return (
     <section
       id="why-me"
-      className="relative bg-black py-16 sm:py-20 lg:py-24 overflow-hidden"
+      className="relative  py-16 sm:py-20 lg:py-24 overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0">

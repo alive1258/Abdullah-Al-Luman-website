@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
                   Luman
                 </span>
               </span>
-              <span className="block text-xs text-gray-600 tracking-wider mt-1">
+              <span className="block text-xs text-gray-200 tracking-wider mt-1">
                 Executive Engineer, BWDB
               </span>
             </Link>
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
             {/* Professional stats badge */}
             <div className="flex items-center gap-3 bg-gray-900/80 backdrop-blur-sm rounded-full px-4 py-2 w-fit border border-gray-800">
               <FaWater className="text-blue-400 animate-pulse" />
-              <span className="text-xs text-gray-400">
+              <span className="text-xs text-gray-200">
                 8+ Years at BWDB • 25+ Projects
               </span>
             </div>
@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-lg flex items-center justify-center border border-gray-800">
                   <FaEnvelope className="w-4 h-4 text-blue-400" />
                 </div>
-                <span className="text-gray-400">
+                <span className="text-gray-200">
                   abdullah.luman@bwdb.gov.bd
                 </span>
               </div>
@@ -80,13 +80,13 @@ const Footer: React.FC = () => {
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-lg flex items-center justify-center border border-gray-800">
                   <FaPhone className="w-4 h-4 text-cyan-400" />
                 </div>
-                <span className="text-gray-400">+880 1712 345678</span>
+                <span className="text-gray-200">+880 1712 345678</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-lg flex items-center justify-center border border-gray-800">
                   <FaMapMarkerAlt className="w-4 h-4 text-blue-400" />
                 </div>
-                <span className="text-gray-400">
+                <span className="text-gray-200">
                   Bheramara, Kushtia, Bangladesh
                 </span>
               </div>
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
 
           {/* Quick Links - 3 columns */}
           <div className="md:col-span-3">
-            <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-4">
               Quick Links
             </h3>
             <div className="grid grid-cols-2 gap-3">
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
                   className="text-gray-500 hover:text-white transition-colors duration-200 text-sm group flex items-center gap-2"
                 >
                   <span className="w-1 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                  <span className="text-gray-600 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400">
+                  <span className="text-gray-200 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400">
                     {link.icon} {link.name}
                   </span>
                 </Link>
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
 
           {/* Professional Profiles - 4 columns */}
           <div className="md:col-span-4">
-            <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-4">
               Professional Network
             </h3>
             <div className="grid grid-cols-2 gap-4">
@@ -169,7 +169,7 @@ const Footer: React.FC = () => {
                     <div className="w-8 h-8 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                       <profile.icon
                         size={16}
-                        className={`text-gray-400 ${profile.color} group-hover:text-white transition-colors`}
+                        className={`text-gray-200 ${profile.color} group-hover:text-white transition-colors`}
                       />
                     </div>
                     <div>
@@ -178,7 +178,7 @@ const Footer: React.FC = () => {
                       >
                         {profile.name}
                       </span>
-                      <p className="text-xs text-gray-600">{profile.handle}</p>
+                      <p className="text-xs text-gray-200">{profile.handle}</p>
                     </div>
                   </div>
                 </Link>
@@ -190,7 +190,7 @@ const Footer: React.FC = () => {
         {/* Middle Section - Expertise Areas */}
         <div className="py-6 border-b border-gray-900">
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
-            <span className="text-gray-600 text-xs uppercase tracking-wider">
+            <span className="text-gray-200 text-xs uppercase tracking-wider">
               Areas of Expertise:
             </span>
             {[
@@ -203,7 +203,7 @@ const Footer: React.FC = () => {
             ].map((area) => (
               <span
                 key={area}
-                className="px-3 py-1 bg-gray-900/60 backdrop-blur-sm rounded-full text-gray-400 text-xs border border-gray-800 hover:border-blue-400 transition-colors cursor-default"
+                className="px-3 py-1 bg-gray-900/60 backdrop-blur-sm rounded-full text-gray-200 text-xs border border-gray-800 hover:border-blue-400 transition-colors cursor-default"
               >
                 {area}
               </span>
@@ -213,7 +213,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom Section */}
         <div className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="text-gray-600 text-xs sm:text-sm flex flex-wrap items-center justify-center gap-2">
+          <div className="text-gray-200 text-xs sm:text-sm flex flex-wrap items-center justify-center gap-2">
             <span>© {currentYear} Abdullah Al Luman</span>
             <span className="w-1 h-1 bg-gray-800 rounded-full"></span>
             <span className="flex items-center gap-1">
@@ -293,7 +293,7 @@ const Footer: React.FC = () => {
         </button>
 
         {/* BWDB Attribution */}
-        <div className="absolute bottom-4 left-4 opacity-10 text-xs text-gray-600 hidden lg:block">
+        <div className="absolute bottom-4 left-4 opacity-10 text-xs text-gray-200 hidden lg:block">
           <pre className="font-mono">
             {`Bangladesh Water Development Board
     Govt. of The People's Republic of Bangladesh`}
