@@ -15,6 +15,7 @@ import {
   FiTrendingUp,
   FiCamera,
 } from "react-icons/fi";
+import PhotoGallery from "./PhotoGallery";
 
 const AboutPreview: React.FC = () => {
   const expertiseAreas = [
@@ -248,93 +249,8 @@ const AboutPreview: React.FC = () => {
         </div>
 
         {/* 14 Pictures of Abdullah Al Luman */}
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900/50 backdrop-blur-xl rounded-full border border-gray-800 mb-4">
-              <FiCamera className="text-blue-400" />
-              <span className="text-sm text-gray-300">
-                Professional Gallery
-              </span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-              Moments with{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                Abdullah Al Luman
-              </span>
-            </h3>
-            <p className="text-gray-400">
-              A glimpse into professional journey and experiences
-            </p>
-          </div>
 
-          {/* Image Grid - 14 Pictures */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4  gap-4">
-            {abdullahImages.map((image, index) => (
-              <div key={image.id} className="group relative">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl blur opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-                <div className="relative  rounded-xl overflow-hidden border-2 border-gray-800 group-hover:border-transparent transition-all duration-500">
-                  <div className="relative w-full h-96 bg-gray-800">
-                    {/* Professional placeholder with initials */}
-                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
-                      <div className="text-center">
-                        <div className="w-16 h-16 mx-auto bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center mb-2">
-                          <span className="text-3xl text-gray-600">👤</span>
-                        </div>
-                        <span className="text-xs text-gray-600 block">
-                          A. Luman
-                        </span>
-                        <span className="text-[10px] text-gray-700">
-                          {image.category}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Hover overlay with info */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-                      <div>
-                        <p className="text-white text-xs font-semibold">
-                          Professional Moment
-                        </p>
-                        <p className="text-gray-400 text-[10px]">
-                          {image.category}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Corner accent */}
-                  <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-white/20 rounded-tl-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-white/20 rounded-br-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Gallery Stats */}
-          <div className="flex items-center justify-center gap-6 mt-8">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-              <span className="text-xs text-gray-500">Field Work</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-              <span className="text-xs text-gray-500">Office</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span className="text-xs text-gray-500">Family</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-              <span className="text-xs text-gray-500">Site Visit</span>
-            </div>
-          </div>
-
-          <p className="text-center text-xs text-gray-600 mt-4">
-            14 professional moments capturing the journey at BWDB
-          </p>
-        </div>
-
+        <PhotoGallery />
         {/* CTA */}
         <div className="text-center">
           <Link
