@@ -13,21 +13,22 @@ interface Photo {
   date?: string;
 }
 
-const PhotoGallery = () => {
+const PhotoGallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<Photo | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const [filteredImages, setFilteredImages] = useState<Photo[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState("Luman"); // default category
+  const [isLoading, setIsLoading] = useState(false); // loading state
 
   // Generate Photos
   const generatePhotos = (): Photo[] => {
     let id = 1;
 
-    const daPhotos = Array.from({ length: 25 }, (_, i) => ({
+    const daPhotos = Array.from({ length: 26 }, (_, i) => ({
       id: id++,
       url: `/images/da${i + 1}.jpg`,
-      category: "Dature",
-      title: `Dature Photo ${i + 1}`,
+      category: "Daughter",
+      title: `Daughter Photo ${i + 1}`,
       location: "Dhaka",
       date: "2024",
     }));
@@ -41,7 +42,7 @@ const PhotoGallery = () => {
       date: "2023",
     }));
 
-    const lumanPhotos = Array.from({ length: 30 }, (_, i) => ({
+    const lumanPhotos = Array.from({ length: 24 }, (_, i) => ({
       id: id++,
       url: `/images/L${i + 1}.jpg`,
       category: "Luman",
@@ -55,36 +56,48 @@ const PhotoGallery = () => {
 
   const images = generatePhotos();
 
-  const categories = ["All", ...new Set(images.map((i) => i.category))];
+  const categories = ["Luman", "Daughter", "Family"]; // only these 3
 
+  // Filter images by category with loading effect
   useEffect(() => {
-    if (selectedCategory === "All") {
-      setFilteredImages(images);
-    } else {
+    const filterImages = async () => {
+      setIsLoading(true); // Start loading
+
+      // Simulate 1 second loading delay
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       setFilteredImages(
         images.filter((img) => img.category === selectedCategory),
       );
-    }
+
+      setIsLoading(false); // End loading
+    };
+
+    filterImages();
   }, [selectedCategory]);
 
+  // Open modal
   const openModal = (image: Photo) => {
     setSelectedImage(image);
     setCurrentIndex(filteredImages.findIndex((i) => i.id === image.id));
     document.body.style.overflow = "hidden";
   };
 
+  // Close modal
   const closeModal = () => {
     setSelectedImage(null);
     document.body.style.overflow = "unset";
   };
 
+  // Navigate modal
   const navigateImage = (dir: "prev" | "next") => {
+    const length = filteredImages.length;
     let newIndex =
       dir === "prev"
         ? currentIndex > 0
           ? currentIndex - 1
-          : filteredImages.length - 1
-        : currentIndex < filteredImages.length - 1
+          : length - 1
+        : currentIndex < length - 1
           ? currentIndex + 1
           : 0;
 
@@ -92,14 +105,39 @@ const PhotoGallery = () => {
     setSelectedImage(filteredImages[newIndex]);
   };
 
+  // Loading Skeleton Component
+  const LoadingSkeleton = () => (
+    <>
+      {[...Array(6)].map((_, index) => (
+        <div
+          key={index}
+          className="relative h-96 rounded-xl overflow-hidden bg-gray-800 animate-pulse"
+        >
+          <div className="w-full h-full">
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 animate-shimmer"></div>
+          </div>
+        </div>
+      ))}
+    </>
+  );
+
   return (
     <div className="container mx-auto px-4 py-20">
-      {/* Header */}
-      <div className="text-center mb-10">
-        <FiCamera className="mx-auto text-3xl text-blue-400 mb-2" />
-        <h2 className="text-2xl md:text-3xl font-bold text-white">
-          Moments with Abdullah Al Luman
+      {/* Header - Updated to match About Me section style */}
+      <div className="text-center mb-12">
+        <div className="inline-flex items-center gap-2 px-4 py-2 backdrop-blur-xl rounded-full border border-gray-800 mb-4">
+          <FiCamera className="text-blue-400" />
+          <span className="text-sm text-gray-300">Photo Gallery</span>
+        </div>
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
+          Moments with
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            Abdullah Al Luman
+          </span>
         </h2>
+        <p className="text-gray-400 max-w-2xl mx-auto">
+          Capturing precious memories and special moments
+        </p>
       </div>
 
       {/* Filters */}
@@ -119,24 +157,37 @@ const PhotoGallery = () => {
         ))}
       </div>
 
-      {/* Image Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        {filteredImages.map((img) => (
-          <div
-            key={img.id}
-            onClick={() => openModal(img)}
-            className="relative h-96 rounded-xl overflow-hidden cursor-pointer group"
-          >
-            <Image
-              src={img.url}
-              alt={img.title}
-              width={800}
-              height={600}
-              quality={100}
-              className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-            />
-          </div>
-        ))}
+      {/* Image Grid with Loading State */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4">
+        {isLoading ? (
+          <LoadingSkeleton />
+        ) : (
+          filteredImages.map((img) => (
+            <div
+              key={img.id}
+              className="relative h-96 rounded-xl overflow-hidden cursor-pointer group"
+            >
+              <Image
+                src={img.url}
+                alt={img.title}
+                width={800}
+                height={600}
+                quality={100}
+                className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+
+              {/* Hover overlay with View Details */}
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                <button
+                  onClick={() => openModal(img)}
+                  className="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full text-sm font-medium transition"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+          ))
+        )}
       </div>
 
       {/* Modal */}

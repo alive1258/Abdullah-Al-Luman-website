@@ -13,7 +13,6 @@ import {
   FiAward,
   FiTarget,
   FiTrendingUp,
-  FiCamera,
 } from "react-icons/fi";
 import PhotoGallery from "./PhotoGallery";
 
@@ -61,21 +60,6 @@ const AboutPreview: React.FC = () => {
     },
   ];
 
-  // Generate 14 images of Abdullah Al Luman (using professional placeholder images with consistent style)
-  const abdullahImages = Array.from({ length: 8 }, (_, i) => ({
-    id: i + 1,
-    src: `https://images.unsplash.com/photo-${1500000000 + i}?w=500&h=600&fit=crop`,
-    alt: `Abdullah Al Luman - Professional ${i + 1}`,
-    category:
-      i % 4 === 0
-        ? "Field Work"
-        : i % 4 === 1
-          ? "Office"
-          : i % 4 === 2
-            ? "Team"
-            : "Site Visit",
-  }));
-
   return (
     <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
       {/* Background */}
@@ -113,7 +97,15 @@ const AboutPreview: React.FC = () => {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-lg opacity-50"></div>
                   <div className="relative w-20 h-20 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">
-                    <span className="text-3xl">👨‍💼</span>
+                    <Image
+                      src="/images/luman1.jpg"
+                      alt="Abdullah Al Luman - Executive Engineer"
+                      width={80}
+                      height={80}
+                      quality={100}
+                      className="object-cover rounded-full object-center hover:scale-105 transition-transform duration-700"
+                      priority
+                    />
                   </div>
                 </div>
                 <div>
@@ -252,15 +244,6 @@ const AboutPreview: React.FC = () => {
 
         <PhotoGallery />
         {/* CTA */}
-        <div className="text-center">
-          <Link
-            href="/about"
-            className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-400 to-cyan-400 text-white rounded-xl font-semibold hover:shadow-xl hover:shadow-blue-400/25 transition-all duration-300 hover:scale-105"
-          >
-            <span>View All Photo</span>
-            <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
       </div>
 
       {/* Bottom Line */}

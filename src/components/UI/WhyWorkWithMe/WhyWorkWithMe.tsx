@@ -83,10 +83,29 @@ const WhyWorkWithMe: React.FC = () => {
     },
   ];
 
+  // Helper function to render icon with gradient
+  const renderGradientIcon = (
+    Icon: React.ElementType,
+    className: string = "w-6 h-6",
+  ) => {
+    return (
+      <div className="relative">
+        <Icon
+          className={`${className} text-transparent`}
+          style={{
+            background: "linear-gradient(to right, #60A5FA, #22D3EE)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+          }}
+        />
+      </div>
+    );
+  };
+
   return (
     <section
       id="why-me"
-      className="relative  py-16 sm:py-20 lg:py-24 overflow-hidden"
+      className="relative py-16 sm:py-20 lg:py-24 overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0">
@@ -181,10 +200,10 @@ const WhyWorkWithMe: React.FC = () => {
                 {/* Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl"></div>
 
-                {/* Icon with Gradient */}
+                {/* Icon with Gradient - Fixed */}
                 <div className="relative mb-4 sm:mb-6">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-xl flex items-center justify-center border border-gray-700 group-hover:border-blue-400/30 transition-all duration-300">
-                    <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400" />
+                    <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-blue-400 group-hover:text-cyan-400" />
                   </div>
 
                   {/* Stats Badge */}
@@ -245,7 +264,7 @@ const WhyWorkWithMe: React.FC = () => {
                   ensuring sustainable and impactful solutions.
                 </p>
 
-                {/* Strength List */}
+                {/* Strength List - Fixed */}
                 <div className="grid sm:grid-cols-2 gap-3">
                   {keyStrengths.map((strength, index) => {
                     const IconComponent = strength.icon;
@@ -255,7 +274,7 @@ const WhyWorkWithMe: React.FC = () => {
                         className="flex items-center gap-3 group"
                       >
                         <div className="w-8 h-8 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-lg flex items-center justify-center border border-gray-800 group-hover:border-blue-400 transition-all">
-                          <IconComponent className="w-4 h-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400" />
+                          <IconComponent className="w-4 h-4 text-blue-400 group-hover:text-cyan-400" />
                         </div>
                         <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white transition-colors">
                           {strength.text}

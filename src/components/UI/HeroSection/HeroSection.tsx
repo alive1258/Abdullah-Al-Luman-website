@@ -245,43 +245,6 @@ const HeroSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="absolute -top-4 sm:-top-6 lg:-top-8 -right-2 sm:-right-4 lg:-right-11 bg-black/90 backdrop-blur-xl border border-gray-800 rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-3 lg:p-4 shadow-2xl hover:scale-105 transition-transform duration-300 z-20">
-                <div className="flex items-center gap-2 sm:gap-3 lg:gap-3">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-lg sm:rounded-xl flex items-center justify-center border border-blue-400/30">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 text-lg sm:text-xl lg:text-3xl">
-                      📚
-                    </span>
-                  </div>
-                  <div>
-                    <p className="text-white text-xs sm:text-sm lg:text-base font-semibold">
-                      Ex-Physics Teacher
-                    </p>
-                    <p className="text-gray-500 text-[10px] sm:text-xs">
-                      Udvash
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Side badge - hidden on mobile/tablet */}
-              <div className="absolute top-1/2 -right-8 lg:-right-12 transform -translate-y-1/2 bg-black/90 backdrop-blur-xl border border-gray-800 rounded-lg lg:rounded-2xl p-2 lg:p-3 shadow-2xl hover:scale-105 transition-transform duration-300 z-20 hidden lg:block">
-                <div className="flex items-center gap-2 lg:gap-3">
-                  <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-lg flex items-center justify-center border border-blue-400/30">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 text-lg lg:text-xl">
-                      🏢
-                    </span>
-                  </div>
-                  <div>
-                    <p className="text-white text-xs lg:text-sm font-semibold">
-                      Current Role
-                    </p>
-                    <p className="text-gray-500 text-[10px] lg:text-xs">
-                      Executive Engineer
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
