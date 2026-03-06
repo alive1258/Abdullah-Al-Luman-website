@@ -275,20 +275,33 @@ const RecentBlogPosts: React.FC = () => {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-12">
-            <div className="inline-block relative mb-4">
-              <span className="text-xs sm:text-sm uppercase tracking-wider text-gray-500 bg-gray-900/50 px-4 py-2 rounded-full border border-gray-800 backdrop-blur-sm">
+          <div className="text-center mb-12 pb-2">
+            {" "}
+            {/* Added pb-2 for bottom padding */}
+            <div className="inline-block relative mb-6">
+              {" "}
+              {/* Increased mb-4 to mb-6 */}
+              <span className="text-xs sm:text-sm uppercase tracking-wider text-gray-500 bg-gray-900/50 px-4 py-2 rounded-full border border-gray-800 backdrop-blur-sm block">
+                {" "}
+                {/* Added block */}
                 📝 Insights & Ideas
               </span>
-              <span className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-blue-400 to-cyan-400"></span>
+              <span className="absolute -bottom-2 left-0 w-full h-px bg-gradient-to-r from-blue-400 to-cyan-400"></span>{" "}
+              {/* Changed -bottom-1 to -bottom-2 */}
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+              {" "}
+              {/* Added leading-tight */}
               Recent
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mt-2">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 py-2">
+                {" "}
+                {/* Added py-2 */}
                 Blog Posts
               </span>
             </h2>
-            <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto px-4 pb-2">
+              {" "}
+              {/* Added px-4 and pb-2 */}
               Sharing knowledge, experiences, and perspectives on water
               management, engineering challenges, professional development, and
               fitness for a balanced life.

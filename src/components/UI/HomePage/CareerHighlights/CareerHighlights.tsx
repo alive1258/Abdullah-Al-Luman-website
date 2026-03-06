@@ -3,24 +3,14 @@ import React from "react";
 import Link from "next/link";
 import {
   FiBriefcase,
-  FiCalendar,
   FiMapPin,
-  FiTrendingUp,
-  FiAward,
   FiArrowRight,
   FiClock,
-  FiUserCheck,
-  FiTarget,
-  FiCpu,
   FiStar,
-  FiBarChart2,
-  FiGlobe,
   FiUsers,
-  FiThumbsUp,
 } from "react-icons/fi";
 import { HiOutlineSparkles, HiOutlineRocketLaunch } from "react-icons/hi2";
-import { BsRocketTakeoff, BsGraphUpArrow } from "react-icons/bs";
-import { MdOutlineWaterDrop, MdOutlineEngineering } from "react-icons/md";
+import { MdOutlineEngineering } from "react-icons/md";
 import { GiMechanicGarage, GiWaterTank } from "react-icons/gi";
 
 const CareerHighlights: React.FC = () => {
@@ -57,29 +47,6 @@ const CareerHighlights: React.FC = () => {
     },
   ];
 
-  const stats = [
-    {
-      value: "8+",
-      label: "Years Experience",
-      icon: <FiClock className="w-6 h-6" />,
-    },
-    {
-      value: "25+",
-      label: "Projects Completed",
-      icon: <BsRocketTakeoff className="w-6 h-6" />,
-    },
-    {
-      value: "3",
-      label: "Divisions Served",
-      icon: <FiGlobe className="w-6 h-6" />,
-    },
-    {
-      value: "98%",
-      label: "Success Rate",
-      icon: <BsGraphUpArrow className="w-6 h-6" />,
-    },
-  ];
-
   const achievements = [
     {
       title: "Project Excellence",
@@ -113,66 +80,83 @@ const CareerHighlights: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900/70  backdrop-blur-xl rounded-full border border-white/10 mb-6">
+        <div className="text-center mb-6 pb-4">
+          {" "}
+          {/* Added pb-4 for bottom padding */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900/70 backdrop-blur-xl rounded-full border border-white/10 ">
             <HiOutlineSparkles className="w-4 h-4 text-blue-400" />
             <span className="text-sm font-medium text-white/80">
               Professional Journey
             </span>
           </div>
-
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white  leading-tight">
+            {" "}
+            {/* Added leading-tight for better line height */}
             Career
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 my-2">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              {" "}
+              {/* Changed to py-2 for vertical padding */}
               Highlights
             </span>
           </h1>
-
-          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto px-4 ">
+            {" "}
+            {/* Added px-4 for mobile padding and pb-2 */}
             Over 8 years of progressive experience at Bangladesh Water
             Development Board
           </p>
         </div>
 
         {/* Current Role Card - Clean */}
-        <div className="relative mb-20">
-          <div className="bg-gray-900/70 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-              <div className="flex items-start gap-6">
-                {/* Icon */}
-                <div className="w-24 h-24 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl flex items-center justify-center">
-                  <GiWaterTank className="w-12 h-12 text-black" />
+        <div className="relative mb-12 sm:mb-16 lg:mb-20">
+          <div className="bg-gray-900/70 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-white/10">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-8">
+              {/* Left Section */}
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 w-full lg:w-auto">
+                {/* Icon - Responsive sizing */}
+                <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <GiWaterTank className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-black" />
                 </div>
 
-                <div>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-400/10 rounded-full text-blue-400 text-sm mb-4 border border-blue-400/20">
+                {/* Content */}
+                <div className="flex-1">
+                  {/* Badge */}
+                  <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-400/10 rounded-full text-blue-400 text-xs sm:text-sm mb-2 sm:mb-3 lg:mb-4 border border-blue-400/20">
                     <FiClock className="w-3 h-3" />
                     Current Position · 2023 — Present
                   </div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-3">
+
+                  {/* Title */}
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 leading-tight">
                     Executive Engineer
                   </h2>
-                  <p className="text-gray-400 flex items-center gap-2 text-lg">
-                    <FiMapPin className="w-5 h-5 text-blue-400" />
-                    Bheramara Mechanical Division, Kushtia
+
+                  {/* Location */}
+                  <p className="text-gray-400 flex items-center gap-2 text-sm sm:text-base lg:text-lg">
+                    <FiMapPin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0" />
+                    <span>Bheramara Mechanical Division, Kushtia</span>
                   </p>
 
-                  {/* Quick stats */}
-                  <div className="flex gap-6 mt-4">
-                    <span className="text-sm text-gray-400">15+ Projects</span>
-                    <span className="text-sm text-gray-400">30+ Team</span>
-                    <span className="text-sm text-gray-400">98% Success</span>
+                  {/* Quick stats - Responsive grid */}
+                  <div className="flex flex-wrap gap-4 sm:gap-6 mt-3 sm:mt-4">
+                    <span className="text-xs sm:text-sm text-gray-400 bg-gray-800/50 px-3 py-1 rounded-full">
+                      15+ Projects
+                    </span>
+                    <span className="text-xs sm:text-sm text-gray-400 bg-gray-800/50 px-3 py-1 rounded-full">
+                      30+ Team
+                    </span>
+                    <span className="text-xs sm:text-sm text-gray-400 bg-gray-800/50 px-3 py-1 rounded-full">
+                      98% Success
+                    </span>
                   </div>
                 </div>
               </div>
 
-              <Link
-                href="/career"
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-400 to-cyan-400 text-black rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
-              >
+              {/* Button - Full width on mobile, auto on desktop */}
+              <div className="w-full lg:w-auto group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-400 to-cyan-400 text-black rounded-xl font-semibold hover:shadow-lg transition-all duration-300 text-sm sm:text-base">
                 <span>View Full Profile</span>
-                <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+                <FiArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              </div>
             </div>
           </div>
         </div>

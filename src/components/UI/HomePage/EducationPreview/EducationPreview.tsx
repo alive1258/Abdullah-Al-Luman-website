@@ -88,22 +88,28 @@ const EducationPreview: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-10 pb-6">
+          {" "}
+          {/* Increased pb-4 to pb-6 */}
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-900/60 backdrop-blur-xl rounded-full border border-white/10 mb-4 sm:mb-6">
             <HiOutlineSparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
             <span className="text-xs sm:text-sm font-medium text-white/80">
               Academic Background
             </span>
           </div>
-
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 lg:mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 lg:mb-6 leading-tight">
+            {" "}
+            {/* Added leading-tight */}
             Education &
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 mt-1 sm:mt-2">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 py-2 sm:py-3">
+              {" "}
+              {/* Added vertical padding */}
               Teaching Journey
             </span>
           </h1>
-
-          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-400 max-w-3xl mx-auto px-4 pb-2">
+            {" "}
+            {/* Added px-4 for mobile and pb-2 */}
             From BUET to Udvash, a journey of academic excellence and knowledge
             sharing
           </p>

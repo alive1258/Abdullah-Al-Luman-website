@@ -151,16 +151,13 @@ const HeroSection: React.FC = () => {
 
             {/* Modern Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 mb-8">
-              <Link
-                href="/contact"
-                className="group relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl text-black font-medium overflow-hidden"
-              >
+              <div className="group relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl text-black font-medium overflow-hidden">
                 <span className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-20"></span>
                 <span className="relative flex items-center gap-2">
                   <FiMail className="w-4 h-4" />
                   Contact Me
                 </span>
-              </Link>
+              </div>
             </div>
 
             {/* Social Links with Modern Design */}
