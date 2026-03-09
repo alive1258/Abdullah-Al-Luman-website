@@ -65,16 +65,16 @@ const HeroSection: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen bg-gradient-to-b md:pt-32 from-[#0a0a0a] via-[#0f0f0f] to-[#0a0a0a] overflow-hidden"
+      className="relative min-h-screen bg-linear-to-b md:pt-32 from-[#0a0a0a] via-[#0f0f0f] to-[#0a0a0a] overflow-hidden"
     >
       {/* Modern Animated Background */}
       <div className="absolute inset-0">
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 
         {/* Gradient Orbs with modern positioning */}
-        <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 -right-20 w-[600px] h-[600px] bg-gradient-to-l from-cyan-400/20 to-teal-400/20 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-0 -left-20 w-125 h-125 bg-linear-to-r from-blue-400/20 to-cyan-400/20 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 -right-20 w-150 h-150 bg-linear-to-l from-cyan-400/20 to-teal-400/20 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
 
         {/* Modern floating particles */}
         <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping"></div>
@@ -89,14 +89,14 @@ const HeroSection: React.FC = () => {
             {/* Name with modern typography */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4">
               <span className="text-white">Abdullah Al</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 mt-2">
+              <span className="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-cyan-400 to-teal-400 mt-2">
                 Luman
               </span>
             </h1>
 
             {/* Current Position with modern styling */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-6">
-              <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-lg border border-blue-400/20">
+              <div className="flex items-center gap-2 px-4 py-2 bg-linear-to-r from-blue-400/10 to-cyan-400/10 rounded-lg border border-blue-400/20">
                 <FiBriefcase className="text-blue-400" />
                 <span className="text-white font-semibold">
                   Executive Engineer
@@ -109,8 +109,8 @@ const HeroSection: React.FC = () => {
             </div>
 
             {/* Modern Description Card */}
-            <div className="relative mb-8 p-6 bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-xl rounded-2xl border border-gray-800 group hover:border-blue-400/30 transition-all duration-500">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/5 to-cyan-400/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative mb-8 p-6 bg-linear-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-xl rounded-2xl border border-gray-800 group hover:border-blue-400/30 transition-all duration-500">
+              <div className="absolute inset-0 bg-linear-to-r from-blue-400/5 to-cyan-400/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <p className="text-base sm:text-lg text-gray-300 leading-relaxed relative z-10">
                 Dedicated civil engineer specializing in water resource
                 management and infrastructure development in Bangladesh.
@@ -123,7 +123,7 @@ const HeroSection: React.FC = () => {
             <div className="flex flex-wrap gap-2 mb-8">
               {careerHighlights.map((item, index) => (
                 <div key={index} className="group relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg blur opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-linear-to-r from-blue-400 to-cyan-400 rounded-lg blur opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
                   <div className="relative flex items-center gap-2 px-4 py-2 bg-gray-900/90 backdrop-blur-sm rounded-lg border border-gray-800 group-hover:border-blue-400 transition-all duration-300">
                     <span className="text-lg">{item.icon}</span>
                     <span className="text-xs sm:text-sm text-gray-300 whitespace-nowrap">
@@ -151,7 +151,7 @@ const HeroSection: React.FC = () => {
 
             {/* Modern Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 mb-8">
-              <div className="group relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl text-black font-medium overflow-hidden">
+              <div className="group relative inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-blue-400 to-cyan-400 rounded-xl text-black font-medium overflow-hidden">
                 <span className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-20"></span>
                 <span className="relative flex items-center gap-2">
                   <FiMail className="w-4 h-4" />
@@ -163,7 +163,7 @@ const HeroSection: React.FC = () => {
             {/* Social Links with Modern Design */}
             <div className="flex items-center gap-4">
               <span className="text-sm text-gray-600">Connect</span>
-              <div className="h-px w-12 bg-gradient-to-r from-blue-400 to-cyan-400"></div>
+              <div className="h-px w-12 bg-linear-to-r from-blue-400 to-cyan-400"></div>
               <div className="flex gap-2">
                 {socialLinks.map((social, index) => {
                   const IconComponent = social.icon;
@@ -175,7 +175,7 @@ const HeroSection: React.FC = () => {
                       rel="noopener noreferrer"
                       className={`group relative w-10 h-10 flex items-center justify-center bg-gray-900/80 backdrop-blur-sm rounded-lg border border-gray-800 transition-all duration-300 hover:scale-110 ${social.color}`}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                      <div className="absolute inset-0 bg-linear-to-r from-blue-400 to-cyan-400 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity"></div>
                       <IconComponent className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
 
                       {/* Tooltip */}
@@ -193,13 +193,13 @@ const HeroSection: React.FC = () => {
           {/* Right Column - Professional Photo - responsive sizing */}
           <div className="relative flex justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0">
             {/* Main photo container - responsive dimensions */}
-            <div className="relative w-[280px] h-[350px] sm:w-[350px] sm:h-[450px] md:w-[400px] md:h-[500px] lg:w-[450px] lg:h-[550px] xl:w-[500px] xl:h-[600px]">
+            <div className="relative w-70 h-87.5 sm:w-87.5 sm:h-112.5 md:w-100 md:h-125 lg:w-112.5 lg:h-137.5">
               {/* Animated gradient background with glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl sm:rounded-3xl rotate-6 blur-xl sm:blur-2xl opacity-30 animate-pulse"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl sm:rounded-3xl rotate-6 blur-lg sm:blur-xl opacity-40"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-blue-400 to-cyan-400 rounded-2xl sm:rounded-3xl rotate-6 blur-xl sm:blur-2xl opacity-30 animate-pulse"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-blue-400 to-cyan-400 rounded-2xl sm:rounded-3xl rotate-6 blur-lg sm:blur-xl opacity-40"></div>
 
               {/* Main gradient border */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl sm:rounded-3xl rotate-3"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-blue-400 to-cyan-400 rounded-2xl sm:rounded-3xl rotate-3"></div>
 
               {/* Image container */}
               <div className="relative w-full h-full bg-gray-900 rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-gray-800/50 z-10 backdrop-blur-sm">
@@ -227,8 +227,8 @@ const HeroSection: React.FC = () => {
               {/* Floating badges - responsive positioning with glow */}
               <div className="absolute -bottom-4 sm:-bottom-6 lg:-bottom-8 -left-2 sm:-left-4 lg:-left-8 bg-black/90 backdrop-blur-xl border border-gray-800 rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-3 lg:p-4 shadow-2xl hover:scale-105 transition-transform duration-300 z-20">
                 <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-lg sm:rounded-xl flex items-center justify-center border border-blue-400/30">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 text-lg sm:text-xl lg:text-3xl">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 bg-linear-to-r from-blue-400/20 to-cyan-400/20 rounded-lg sm:rounded-xl flex items-center justify-center border border-blue-400/30">
+                    <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400 text-lg sm:text-xl lg:text-3xl">
                       🏛️
                     </span>
                   </div>
@@ -250,18 +250,18 @@ const HeroSection: React.FC = () => {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2">
           <span className="text-xs text-gray-600 tracking-wider">SCROLL</span>
           <div className="w-6 h-10 border-2 border-gray-800 rounded-full flex justify-center relative group hover:border-blue-400 transition-colors">
-            <div className="w-1.5 h-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2 animate-bounce group-hover:scale-110 transition-transform"></div>
+            <div className="w-1.5 h-3 bg-linear-to-r from-blue-400 to-cyan-400 rounded-full mt-2 animate-bounce group-hover:scale-110 transition-transform"></div>
           </div>
         </div>
       </div>
 
       {/* Modern Gradient Lines */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-400 to-transparent"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-cyan-400 to-transparent"></div>
 
       {/* Modern Corner Glows */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-r from-blue-400/10 to-transparent rounded-full filter blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-l from-cyan-400/10 to-transparent rounded-full filter blur-3xl"></div>
+      <div className="absolute top-0 left-0 w-64 h-64 bg-linear-to-r from-blue-400/10 to-transparent rounded-full filter blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-linear-to-l from-cyan-400/10 to-transparent rounded-full filter blur-3xl"></div>
     </section>
   );
 };

@@ -1,16 +1,8 @@
-"use client";
 import React from "react";
 import Link from "next/link";
-import {
-  FiBookOpen,
-  FiMapPin,
-  FiAward,
-  FiArrowRight,
-  FiStar,
-  FiUsers,
-} from "react-icons/fi";
+import { FiBookOpen, FiMapPin, FiArrowRight, FiStar } from "react-icons/fi";
 import { HiOutlineSparkles, HiOutlineAcademicCap } from "react-icons/hi2";
-import { MdSchool, MdScience, MdEngineering } from "react-icons/md";
+import { MdSchool, MdScience } from "react-icons/md";
 import { GiTeacher, GiGraduateCap } from "react-icons/gi";
 
 const EducationPreview: React.FC = () => {
@@ -101,7 +93,7 @@ const EducationPreview: React.FC = () => {
             {" "}
             {/* Added leading-tight */}
             Education &
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 py-2 sm:py-3">
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-cyan-400 to-teal-400 py-2 sm:py-3">
               {" "}
               {/* Added vertical padding */}
               Teaching Journey
@@ -120,7 +112,7 @@ const EducationPreview: React.FC = () => {
           <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-white/10">
             <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 lg:gap-8">
               {/* Icon */}
-              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl sm:rounded-3xl flex items-center justify-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-linear-to-r from-blue-400 to-cyan-400 rounded-2xl sm:rounded-3xl flex items-center justify-center">
                 <GiGraduateCap className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-black" />
               </div>
 
@@ -135,14 +127,14 @@ const EducationPreview: React.FC = () => {
                 <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1">
                   Bangladesh University of Engineering and Technology
                 </h2>
-                <p className="text-sm sm:text-base text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-2">
+                <p className="text-sm sm:text-base text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400 mb-2">
                   Bachelor of Science in Mechanical Engineering
                 </p>
 
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs sm:text-sm text-gray-400">
                   <span>CGPA: 3.75/4.00</span>
                   <span>•</span>
-                  <span>Dean's List: 2x</span>
+                  <span>Dean&apos;s List: 2x</span>
                   <span>•</span>
                   <span>Top 5%</span>
                 </div>
@@ -159,7 +151,7 @@ const EducationPreview: React.FC = () => {
                 {/* Badge */}
                 <div className="flex items-start justify-between mb-4">
                   <div
-                    className={`w-12 h-12 bg-gradient-to-r ${edu.color} rounded-lg flex items-center justify-center`}
+                    className={`w-12 h-12 bg-linear-to-r ${edu.color} rounded-lg flex items-center justify-center`}
                   >
                     <div className="text-white text-xl sm:text-2xl">
                       {edu.icon}
@@ -196,7 +188,7 @@ const EducationPreview: React.FC = () => {
 
                 {/* Badge at bottom */}
                 <span
-                  className={`text-xs px-2 py-1 bg-gradient-to-r ${edu.color} text-black rounded-full`}
+                  className={`text-xs px-2 py-1 bg-linear-to-r ${edu.color} text-black rounded-full`}
                 >
                   {edu.badge}
                 </span>
@@ -210,7 +202,7 @@ const EducationPreview: React.FC = () => {
           <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-white/10">
             <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 lg:gap-8">
               {/* Icon */}
-              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl sm:rounded-3xl flex items-center justify-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-linear-to-r from-purple-400 to-pink-400 rounded-2xl sm:rounded-3xl flex items-center justify-center">
                 <GiTeacher className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-black" />
               </div>
 
@@ -228,7 +220,7 @@ const EducationPreview: React.FC = () => {
                 <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1">
                   {teachingExperience.institution}
                 </h2>
-                <p className="text-sm sm:text-base text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">
+                <p className="text-sm sm:text-base text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-pink-400 mb-2">
                   {teachingExperience.role} · {teachingExperience.period}
                 </p>
 
@@ -296,7 +288,7 @@ const EducationPreview: React.FC = () => {
 
             <Link
               href="/education"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-400 to-cyan-400 text-black rounded-lg font-bold text-sm sm:text-base hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-r from-blue-400 to-cyan-400 text-black rounded-lg font-bold text-sm sm:text-base hover:shadow-lg transition-all duration-300"
             >
               <FiBookOpen className="w-4 h-4" />
               <span>View Complete History</span>
@@ -307,7 +299,7 @@ const EducationPreview: React.FC = () => {
       </div>
 
       {/* Bottom Line */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-400 to-transparent"></div>
     </section>
   );
 };

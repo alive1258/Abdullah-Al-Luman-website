@@ -1,6 +1,4 @@
-"use client";
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import {
   FiUser,
@@ -8,7 +6,6 @@ import {
   FiMapPin,
   FiCalendar,
   FiHeart,
-  FiArrowRight,
   FiGlobe,
   FiAward,
   FiTarget,
@@ -65,8 +62,8 @@ const AboutPreview: React.FC = () => {
       {/* Background */}
       <div className="absolute inset-0">
         {/* <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div> */}
-        <div className="absolute top-20 -left-20 w-[500px] h-[500px] bg-blue-400/10 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-20 -right-20 w-[600px] h-[600px] bg-cyan-400/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-20 -left-20 w-125 h-125 bg-blue-400/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-20 -right-20 w-150 h-150 bg-cyan-400/10 rounded-full filter blur-3xl"></div>
       </div>
 
       <div className="relative container">
@@ -78,7 +75,7 @@ const AboutPreview: React.FC = () => {
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
             Abdullah Al
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
               Luman
             </span>
           </h2>
@@ -95,8 +92,8 @@ const AboutPreview: React.FC = () => {
             <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6">
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-lg opacity-50"></div>
-                  <div className="relative w-20 h-20 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">
+                  <div className="absolute inset-0 bg-linear-to-r from-blue-400 to-cyan-400 rounded-full blur-lg opacity-50"></div>
+                  <div className="relative w-20 h-20 bg-linear-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">
                     <Image
                       src="/images/luman1.jpg"
                       alt="Abdullah Al Luman - Executive Engineer"
@@ -121,9 +118,9 @@ const AboutPreview: React.FC = () => {
 
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 Born and raised in Sirajganj, I developed a deep connection with
-                Bangladesh's water systems from an early age. This passion led
-                me to pursue civil engineering at BUET and eventually join the
-                Bangladesh Water Development Board.
+                Bangladesh&apos;s water systems from an early age. This passion
+                led me to pursue civil engineering at BUET and eventually join
+                the Bangladesh Water Development Board.
               </p>
 
               {/* Quick Facts */}
@@ -159,7 +156,7 @@ const AboutPreview: React.FC = () => {
               <div className="space-y-4">
                 {achievements.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-linear-to-r from-blue-400/20 to-cyan-400/20 rounded-lg flex items-center justify-center">
                       <span className="text-sm">{item.icon}</span>
                     </div>
                     <div className="flex-1">
@@ -247,7 +244,7 @@ const AboutPreview: React.FC = () => {
       </div>
 
       {/* Bottom Line */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-400 to-transparent"></div>
     </section>
   );
 };

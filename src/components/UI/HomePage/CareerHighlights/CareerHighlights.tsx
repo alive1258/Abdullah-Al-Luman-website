@@ -93,7 +93,7 @@ const CareerHighlights: React.FC = () => {
             {" "}
             {/* Added leading-tight for better line height */}
             Career
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
               {" "}
               {/* Changed to py-2 for vertical padding */}
               Highlights
@@ -114,7 +114,7 @@ const CareerHighlights: React.FC = () => {
               {/* Left Section */}
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 w-full lg:w-auto">
                 {/* Icon - Responsive sizing */}
-                <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-linear-to-r from-blue-400 to-cyan-400 rounded-xl sm:rounded-2xl flex items-center justify-center shrink-0">
                   <GiWaterTank className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-black" />
                 </div>
 
@@ -133,7 +133,7 @@ const CareerHighlights: React.FC = () => {
 
                   {/* Location */}
                   <p className="text-gray-400 flex items-center gap-2 text-sm sm:text-base lg:text-lg">
-                    <FiMapPin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0" />
+                    <FiMapPin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 shrink-0" />
                     <span>Bheramara Mechanical Division, Kushtia</span>
                   </p>
 
@@ -153,7 +153,7 @@ const CareerHighlights: React.FC = () => {
               </div>
 
               {/* Button - Full width on mobile, auto on desktop */}
-              <div className="w-full lg:w-auto group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-400 to-cyan-400 text-black rounded-xl font-semibold hover:shadow-lg transition-all duration-300 text-sm sm:text-base">
+              <div className="w-full lg:w-auto group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-r from-blue-400 to-cyan-400 text-black rounded-xl font-semibold hover:shadow-lg transition-all duration-300 text-sm sm:text-base">
                 <span>View Full Profile</span>
                 <FiArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </div>
@@ -273,7 +273,7 @@ const CareerHighlights: React.FC = () => {
 
             <Link
               href="/career"
-              className="group inline-flex items-center gap-4 px-10 py-5 bg-gradient-to-r from-blue-400 to-cyan-400 text-black rounded-xl font-bold text-lg hover:shadow-lg transition-all duration-300"
+              className="group inline-flex items-center gap-4 px-10 py-5 bg-linear-to-r from-blue-400 to-cyan-400 text-black rounded-xl font-bold text-lg hover:shadow-lg transition-all duration-300"
             >
               <FiBriefcase className="w-6 h-6" />
               <span>Explore Complete Career History</span>
@@ -284,7 +284,7 @@ const CareerHighlights: React.FC = () => {
       </div>
 
       {/* Bottom Line */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-400 to-transparent"></div>
     </section>
   );
 };

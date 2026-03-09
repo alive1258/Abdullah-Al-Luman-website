@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 import {
@@ -83,25 +82,6 @@ const WhyWorkWithMe: React.FC = () => {
     },
   ];
 
-  // Helper function to render icon with gradient
-  const renderGradientIcon = (
-    Icon: React.ElementType,
-    className: string = "w-6 h-6",
-  ) => {
-    return (
-      <div className="relative">
-        <Icon
-          className={`${className} text-transparent`}
-          style={{
-            background: "linear-gradient(to right, #60A5FA, #22D3EE)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-          }}
-        />
-      </div>
-    );
-  };
-
   return (
     <section
       id="why-me"
@@ -110,11 +90,11 @@ const WhyWorkWithMe: React.FC = () => {
       {/* Background Effects */}
       <div className="absolute inset-0">
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-size-[3rem_3rem] mask-[radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 
         {/* Gradient Orbs */}
-        <div className="absolute top-40 -left-20 w-[400px] h-[400px] bg-gradient-to-r from-blue-400/5 to-cyan-400/5 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-40 -right-20 w-[500px] h-[500px] bg-gradient-to-r from-blue-400/5 to-cyan-400/5 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-40 -left-20 w-100 h-100 bg-linear-to-r from-blue-400/5 to-cyan-400/5 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-40 -right-20 w-125 h-125 bg-linear-to-r from-blue-400/5 to-cyan-400/5 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
 
         {/* Floating Particles */}
         <div className="absolute top-20 left-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping"></div>
@@ -130,13 +110,13 @@ const WhyWorkWithMe: React.FC = () => {
             <span className="text-xs sm:text-sm uppercase tracking-wider text-gray-500 bg-gray-900/50 px-4 py-2 rounded-full border border-gray-800 backdrop-blur-sm">
               💼 Why Choose Me
             </span>
-            <span className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-blue-400 to-cyan-400"></span>
+            <span className="absolute -bottom-1 left-0 w-full h-px bg-linear-to-r from-blue-400 to-cyan-400"></span>
           </div>
 
           {/* Title */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
             Why Work With
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mt-2">
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400 mt-2">
               Abdullah Al Luman
             </span>
           </h2>
@@ -260,7 +240,7 @@ const WhyWorkWithMe: React.FC = () => {
                 </h3>
                 <p className="text-sm sm:text-base text-gray-400 mb-6 leading-relaxed">
                   My approach combines technical expertise with a deep
-                  understanding of Bangladesh's water infrastructure needs,
+                  understanding of Bangladesh water infrastructure needs,
                   ensuring sustainable and impactful solutions.
                 </p>
 

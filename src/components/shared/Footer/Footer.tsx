@@ -96,10 +96,10 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <HiOutlinePhone className="w-5 h-5 text-blue-400 mt-0.5 shrink-0" />
                 <a
-                  href="tel:+8801XXXXXXXXX"
+                  href="tel:+8801..........."
                   className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
                 >
-                  +880 1XXX-XXXXXX
+                  +880 1........
                 </a>
               </li>
               <li className="flex items-start gap-3">
