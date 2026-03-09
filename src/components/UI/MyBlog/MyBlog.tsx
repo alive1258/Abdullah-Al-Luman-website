@@ -250,7 +250,7 @@ const MyBlog = () => {
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-600 rounded-full filter blur-3xl"></div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container relative z-10">
         {/* Header */}
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">

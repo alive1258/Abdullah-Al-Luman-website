@@ -78,7 +78,7 @@ const CareerHighlights: React.FC = () => {
     <section className="relative  py-24 sm:py-28 lg:py-32 overflow-hidden">
       {/* Simple Background */}
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative container">
         {/* Header */}
         <div className="text-center mb-6 pb-4">
           {" "}

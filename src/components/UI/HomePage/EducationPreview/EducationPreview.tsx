@@ -78,7 +78,7 @@ const EducationPreview: React.FC = () => {
     <section className="relative py-12 sm:py-16 lg:py-20 xl:py-24 overflow-hidden">
       {/* Simple Background */}
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative container">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-10 pb-6">
           {" "}

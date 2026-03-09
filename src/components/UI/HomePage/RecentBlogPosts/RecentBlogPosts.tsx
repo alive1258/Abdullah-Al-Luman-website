@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/immutability */
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -273,7 +274,7 @@ const RecentBlogPosts: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative container">
           {/* Section Header */}
           <div className="text-center mb-12 pb-2">
             {" "}

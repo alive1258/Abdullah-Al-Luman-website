@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
       {/* Animated gradient line at bottom */}
       <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="container">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <button

@@ -102,7 +102,7 @@ const WhyWorkWithMe: React.FC = () => {
         <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping delay-700"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative container">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           {/* Subtitle */}
